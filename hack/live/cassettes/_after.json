@@ -1,0 +1,16 @@
+{
+  "recorded": "2026-11-20T23:57:30Z",
+  "target": "Confluent Cloud trial",
+  "interactions": [
+    {
+      "method": "DELETE",
+      "path": "/iam/v2/service-accounts/sa-5m3099z",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/org/v2/environments/env-qqkyyd",
+      "status": 204
+    }
+  ]
+}

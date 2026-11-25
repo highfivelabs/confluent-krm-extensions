@@ -1,0 +1,93 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/connect/v1/custom-connector-plugins",
+      "body": "{\"connector_class\":\"io.confluent.kafka.connect.datagen.DatagenConnector\",\"connector_type\":\"SOURCE\",\"display_name\":\"example-display-name\",\"upload_source\":{\"location\":\"PRESIGNED_URL_LOCATION\",\"upload_id\":\"e53bb2e8-8de3-49fa-9fb1-4e3fd9a16b66\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"connect/v1\",\"connector_class\":\"io.confluent.kafka.connect.datagen.DatagenConnector\",\"connector_type\":\"SOURCE\",\"content_format\":\"ZIP\",\"display_name\":\"example-display-name\",\"id\":270000023,\"kind\":\"CustomConnectorPlugin\",\"upload_source\":{\"location\":\"PRESIGNED_URL_LOCATION\",\"upload_id\":\"e53bb2e8-8de3-49fa-9fb1-4e3fd9a16b66\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/connect/v1/custom-connector-plugins/270000023",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"connect/v1\",\"connector_class\":\"io.confluent.kafka.connect.datagen.DatagenConnector\",\"connector_type\":\"SOURCE\",\"content_format\":\"ZIP\",\"display_name\":\"example-display-name\",\"id\":270000023,\"kind\":\"CustomConnectorPlugin\",\"upload_source\":{\"location\":\"PRESIGNED_URL_LOCATION\",\"upload_id\":\"e53bb2e8-8de3-49fa-9fb1-4e3fd9a16b66\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/connect/v1/custom-connector-plugins/270000023",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"connect/v1\",\"connector_class\":\"io.confluent.kafka.connect.datagen.DatagenConnector\",\"connector_type\":\"SOURCE\",\"content_format\":\"ZIP\",\"display_name\":\"example-display-name\",\"id\":270000023,\"kind\":\"CustomConnectorPlugin\",\"upload_source\":{\"location\":\"PRESIGNED_URL_LOCATION\",\"upload_id\":\"e53bb2e8-8de3-49fa-9fb1-4e3fd9a16b66\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/connect/v1/custom-connector-plugins/270000023",
+      "body": "{\"display_name\":\"changed-display_name\",\"upload_source\":{\"location\":\"PRESIGNED_URL_LOCATION\",\"upload_id\":\"e53bb2e8-8de3-49fa-9fb1-4e3fd9a16b66\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"connect/v1\",\"connector_class\":\"io.confluent.kafka.connect.datagen.DatagenConnector\",\"connector_type\":\"SOURCE\",\"content_format\":\"ZIP\",\"display_name\":\"changed-display_name\",\"id\":270000023,\"kind\":\"CustomConnectorPlugin\",\"upload_source\":{\"location\":\"PRESIGNED_URL_LOCATION\",\"upload_id\":\"e53bb2e8-8de3-49fa-9fb1-4e3fd9a16b66\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/connect/v1/custom-connector-plugins/270000023",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"connect/v1\",\"connector_class\":\"io.confluent.kafka.connect.datagen.DatagenConnector\",\"connector_type\":\"SOURCE\",\"content_format\":\"ZIP\",\"display_name\":\"changed-display_name\",\"id\":270000023,\"kind\":\"CustomConnectorPlugin\",\"upload_source\":{\"location\":\"PRESIGNED_URL_LOCATION\",\"upload_id\":\"e53bb2e8-8de3-49fa-9fb1-4e3fd9a16b66\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/connect/v1/custom-connector-plugins/270000023",
+      "body": "{\"display_name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"connect/v1\",\"connector_class\":\"io.confluent.kafka.connect.datagen.DatagenConnector\",\"connector_type\":\"SOURCE\",\"content_format\":\"ZIP\",\"display_name\":\"hfl-live-drift\",\"id\":270000023,\"kind\":\"CustomConnectorPlugin\",\"upload_source\":{\"location\":\"PRESIGNED_URL_LOCATION\",\"upload_id\":\"e53bb2e8-8de3-49fa-9fb1-4e3fd9a16b66\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/connect/v1/custom-connector-plugins/270000023",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"connect/v1\",\"connector_class\":\"io.confluent.kafka.connect.datagen.DatagenConnector\",\"connector_type\":\"SOURCE\",\"content_format\":\"ZIP\",\"display_name\":\"hfl-live-drift\",\"id\":270000023,\"kind\":\"CustomConnectorPlugin\",\"upload_source\":{\"location\":\"PRESIGNED_URL_LOCATION\",\"upload_id\":\"e53bb2e8-8de3-49fa-9fb1-4e3fd9a16b66\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/connect/v1/custom-connector-plugins/270000023",
+      "body": "{\"display_name\":\"changed-display_name\",\"upload_source\":{\"location\":\"PRESIGNED_URL_LOCATION\",\"upload_id\":\"e53bb2e8-8de3-49fa-9fb1-4e3fd9a16b66\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"connect/v1\",\"connector_class\":\"io.confluent.kafka.connect.datagen.DatagenConnector\",\"connector_type\":\"SOURCE\",\"content_format\":\"ZIP\",\"display_name\":\"changed-display_name\",\"id\":270000023,\"kind\":\"CustomConnectorPlugin\",\"upload_source\":{\"location\":\"PRESIGNED_URL_LOCATION\",\"upload_id\":\"e53bb2e8-8de3-49fa-9fb1-4e3fd9a16b66\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/connect/v1/custom-connector-plugins/270000023",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"connect/v1\",\"connector_class\":\"io.confluent.kafka.connect.datagen.DatagenConnector\",\"connector_type\":\"SOURCE\",\"content_format\":\"ZIP\",\"display_name\":\"changed-display_name\",\"id\":270000023,\"kind\":\"CustomConnectorPlugin\",\"upload_source\":{\"location\":\"PRESIGNED_URL_LOCATION\",\"upload_id\":\"e53bb2e8-8de3-49fa-9fb1-4e3fd9a16b66\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/connect/v1/custom-connector-plugins/270000023",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/connect/v1/custom-connector-plugins/270000023",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

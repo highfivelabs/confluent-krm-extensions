@@ -1,0 +1,92 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/notifications/v1/integrations",
+      "body": "{\"display_name\":\"{{name}}\",\"target\":{\"kind\":\"Webhook\",\"url\":\"https://example.com/hfl-live\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"display_name\":\"{{name}}\",\"id\":270000010,\"kind\":\"Integration\",\"target\":{\"kind\":\"Webhook\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/integrations/270000010",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"display_name\":\"{{name}}\",\"id\":270000010,\"kind\":\"Integration\",\"target\":{\"kind\":\"Webhook\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/integrations/270000010",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"display_name\":\"{{name}}\",\"id\":270000010,\"kind\":\"Integration\",\"target\":{\"kind\":\"Webhook\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/integrations/270000010",
+      "body": "{\"display_name\":\"{{name}}-b\",\"target\":{\"kind\":\"Webhook\",\"url\":\"https://example.com/hfl-live\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"display_name\":\"{{name}}-b\",\"id\":270000010,\"kind\":\"Integration\",\"target\":{\"kind\":\"Webhook\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/integrations/270000010",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"display_name\":\"{{name}}-b\",\"id\":270000010,\"kind\":\"Integration\",\"target\":{\"kind\":\"Webhook\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/integrations/270000010",
+      "body": "{\"display_name\":\"{{name}}-c\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"display_name\":\"{{name}}-c\",\"id\":270000010,\"kind\":\"Integration\",\"target\":{\"kind\":\"Webhook\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/integrations/270000010",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"display_name\":\"{{name}}-c\",\"id\":270000010,\"kind\":\"Integration\",\"target\":{\"kind\":\"Webhook\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/integrations/270000010",
+      "body": "{\"display_name\":\"{{name}}-b\",\"target\":{\"kind\":\"Webhook\",\"url\":\"https://example.com/hfl-live\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"display_name\":\"{{name}}-b\",\"id\":270000010,\"kind\":\"Integration\",\"target\":{\"kind\":\"Webhook\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/integrations/270000010",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"display_name\":\"{{name}}-b\",\"id\":270000010,\"kind\":\"Integration\",\"target\":{\"kind\":\"Webhook\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/notifications/v1/integrations/270000010",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/integrations/270000010",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

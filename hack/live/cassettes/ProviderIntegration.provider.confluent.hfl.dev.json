@@ -1,0 +1,41 @@
+{
+  "recorded": "2026-11-20T23:57:09Z",
+  "target": "Confluent Cloud trial",
+  "vars": {
+    "ca": "op-Xl6A",
+    "env": "env-qqkyyd",
+    "envcrn": "crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd",
+    "hook": "i-JQlZP",
+    "idp": "op-5AZ3",
+    "sa": "sa-5m3099z"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/pim/v1/integrations",
+      "body": "{\"config\":{\"customer_iam_role_arn\":\"arn:aws:iam::000000000000:role/{{name}}\",\"kind\":\"AwsIntegrationConfig\"},\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\"},\"provider\":\"aws\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\n  \"api_version\": \"pim/v1\",\n  \"config\": {\n    \"customer_iam_role_arn\": \"arn:aws:iam::000000000000:role/{{name}}\",\n    \"external_id\": \"6d223c5c-b4c1-4047-a09f-fc971820d0ed\",\n    \"iam_role_arn\": \"arn:aws:iam::851725421142:role/cspi-6pr16\",\n    \"kind\": \"AwsIntegrationConfig\"\n  },\n  \"display_name\": \"{{name}}\",\n  \"environment\": {\n    \"id\": \"env-qqkyyd\",\n    \"related\": \"{{baseURL}}/org/v2/environments/env-qqkyyd\",\n    \"resource_name\": \"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"\n  },\n  \"id\": \"cspi-6pr16\",\n  \"kind\": \"Integration\",\n  \"provider\": \"aws\",\n  \"usages\": null\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/pim/v1/integrations/cspi-6pr16?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\n  \"api_version\": \"pim/v1\",\n  \"config\": {\n    \"customer_iam_role_arn\": \"arn:aws:iam::000000000000:role/{{name}}\",\n    \"external_id\": \"6d223c5c-b4c1-4047-a09f-fc971820d0ed\",\n    \"iam_role_arn\": \"arn:aws:iam::851725421142:role/cspi-6pr16\",\n    \"kind\": \"AwsIntegrationConfig\"\n  },\n  \"display_name\": \"{{name}}\",\n  \"environment\": {\n    \"id\": \"env-qqkyyd\",\n    \"related\": \"{{baseURL}}/org/v2/environments/env-qqkyyd\",\n    \"resource_name\": \"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"\n  },\n  \"id\": \"cspi-6pr16\",\n  \"kind\": \"Integration\",\n  \"provider\": \"aws\",\n  \"usages\": null\n}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/pim/v1/integrations/cspi-6pr16?environment=env-qqkyyd",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/pim/v1/integrations/cspi-6pr16?environment=env-qqkyyd",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\n  \"errors\": [\n    {\n      \"id\": \"6ce8889628471c04b5fb999fda274dd0\",\n      \"status\": \"404\",\n      \"code\": \"resource_not_found\",\n      \"detail\": \"Integration resource not found\",\n      \"source\": {}\n    }\n  ]\n}"
+    }
+  ]
+}

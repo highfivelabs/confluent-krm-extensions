@@ -1,0 +1,93 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/notifications/v1/resource-preferences",
+      "body": "{\"current_state\":\"DISABLED\",\"resource\":\"rehearsal-envcrn\",\"resource_type\":\"ENVIRONMENT\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"DISABLED\",\"id\":270000012,\"kind\":\"ResourcePreference\",\"resource\":\"rehearsal-envcrn\",\"resource_type\":\"ENVIRONMENT\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-preferences/270000012",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"DISABLED\",\"id\":270000012,\"kind\":\"ResourcePreference\",\"resource\":\"rehearsal-envcrn\",\"resource_type\":\"ENVIRONMENT\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-preferences/270000012",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"DISABLED\",\"id\":270000012,\"kind\":\"ResourcePreference\",\"resource\":\"rehearsal-envcrn\",\"resource_type\":\"ENVIRONMENT\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/resource-preferences/270000012",
+      "body": "{\"current_state\":\"ENABLED\",\"resource\":\"rehearsal-envcrn\",\"resource_type\":\"ENVIRONMENT\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"ENABLED\",\"id\":270000012,\"kind\":\"ResourcePreference\",\"resource\":\"rehearsal-envcrn\",\"resource_type\":\"ENVIRONMENT\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-preferences/270000012",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"ENABLED\",\"id\":270000012,\"kind\":\"ResourcePreference\",\"resource\":\"rehearsal-envcrn\",\"resource_type\":\"ENVIRONMENT\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/resource-preferences/270000012",
+      "body": "{\"current_state\":\"DISABLED\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"DISABLED\",\"id\":270000012,\"kind\":\"ResourcePreference\",\"resource\":\"rehearsal-envcrn\",\"resource_type\":\"ENVIRONMENT\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-preferences/270000012",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"DISABLED\",\"id\":270000012,\"kind\":\"ResourcePreference\",\"resource\":\"rehearsal-envcrn\",\"resource_type\":\"ENVIRONMENT\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/resource-preferences/270000012",
+      "body": "{\"current_state\":\"ENABLED\",\"resource\":\"rehearsal-envcrn\",\"resource_type\":\"ENVIRONMENT\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"ENABLED\",\"id\":270000012,\"kind\":\"ResourcePreference\",\"resource\":\"rehearsal-envcrn\",\"resource_type\":\"ENVIRONMENT\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-preferences/270000012",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"ENABLED\",\"id\":270000012,\"kind\":\"ResourcePreference\",\"resource\":\"rehearsal-envcrn\",\"resource_type\":\"ENVIRONMENT\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/notifications/v1/resource-preferences/270000012",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-preferences/270000012",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

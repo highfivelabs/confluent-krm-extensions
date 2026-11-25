@@ -1,0 +1,93 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/artifact/v1/flink-artifacts?cloud=AWS\u0026region=us-east-1",
+      "body": "{\"cloud\":\"AWS\",\"display_name\":\"example-display-name\",\"environment\":\"env-00000\",\"region\":\"us-east-1\",\"upload_source\":{}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"artifact/v1\",\"cloud\":\"AWS\",\"display_name\":\"example-display-name\",\"environment\":\"env-00000\",\"id\":270000021,\"kind\":\"FlinkArtifact\",\"metadata\":{\"self\":\"https://api.confluent.cloud/v2/kafka-clusters/lkc-f3a90de\"},\"region\":\"us-east-1\",\"versions\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/artifact/v1/flink-artifacts/270000021?cloud=AWS\u0026environment=env-00000\u0026region=us-east-1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"artifact/v1\",\"cloud\":\"AWS\",\"display_name\":\"example-display-name\",\"environment\":\"env-00000\",\"id\":270000021,\"kind\":\"FlinkArtifact\",\"metadata\":{\"self\":\"https://api.confluent.cloud/v2/kafka-clusters/lkc-f3a90de\"},\"region\":\"us-east-1\",\"versions\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/artifact/v1/flink-artifacts/270000021?cloud=changed-cloud\u0026environment=env-00000\u0026region=us-east-1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"artifact/v1\",\"cloud\":\"AWS\",\"display_name\":\"example-display-name\",\"environment\":\"env-00000\",\"id\":270000021,\"kind\":\"FlinkArtifact\",\"metadata\":{\"self\":\"https://api.confluent.cloud/v2/kafka-clusters/lkc-f3a90de\"},\"region\":\"us-east-1\",\"versions\":[]}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/artifact/v1/flink-artifacts/270000021?cloud=changed-cloud\u0026environment=env-00000\u0026region=us-east-1",
+      "body": "{\"cloud\":\"changed-cloud\",\"display_name\":\"example-display-name\",\"environment\":\"env-00000\",\"region\":\"us-east-1\",\"upload_source\":{}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"artifact/v1\",\"cloud\":\"changed-cloud\",\"display_name\":\"example-display-name\",\"environment\":\"env-00000\",\"id\":270000021,\"kind\":\"FlinkArtifact\",\"metadata\":{\"self\":\"https://api.confluent.cloud/v2/kafka-clusters/lkc-f3a90de\"},\"region\":\"us-east-1\",\"versions\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/artifact/v1/flink-artifacts/270000021?cloud=changed-cloud\u0026environment=env-00000\u0026region=us-east-1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"artifact/v1\",\"cloud\":\"changed-cloud\",\"display_name\":\"example-display-name\",\"environment\":\"env-00000\",\"id\":270000021,\"kind\":\"FlinkArtifact\",\"metadata\":{\"self\":\"https://api.confluent.cloud/v2/kafka-clusters/lkc-f3a90de\"},\"region\":\"us-east-1\",\"versions\":[]}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/artifact/v1/flink-artifacts/270000021?cloud=AWS\u0026environment=env-00000\u0026region=us-east-1",
+      "body": "{\"cloud\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"artifact/v1\",\"cloud\":\"hfl-live-drift\",\"display_name\":\"example-display-name\",\"environment\":\"env-00000\",\"id\":270000021,\"kind\":\"FlinkArtifact\",\"metadata\":{\"self\":\"https://api.confluent.cloud/v2/kafka-clusters/lkc-f3a90de\"},\"region\":\"us-east-1\",\"versions\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/artifact/v1/flink-artifacts/270000021?cloud=changed-cloud\u0026environment=env-00000\u0026region=us-east-1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"artifact/v1\",\"cloud\":\"hfl-live-drift\",\"display_name\":\"example-display-name\",\"environment\":\"env-00000\",\"id\":270000021,\"kind\":\"FlinkArtifact\",\"metadata\":{\"self\":\"https://api.confluent.cloud/v2/kafka-clusters/lkc-f3a90de\"},\"region\":\"us-east-1\",\"versions\":[]}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/artifact/v1/flink-artifacts/270000021?cloud=changed-cloud\u0026environment=env-00000\u0026region=us-east-1",
+      "body": "{\"cloud\":\"changed-cloud\",\"display_name\":\"example-display-name\",\"environment\":\"env-00000\",\"region\":\"us-east-1\",\"upload_source\":{}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"artifact/v1\",\"cloud\":\"changed-cloud\",\"display_name\":\"example-display-name\",\"environment\":\"env-00000\",\"id\":270000021,\"kind\":\"FlinkArtifact\",\"metadata\":{\"self\":\"https://api.confluent.cloud/v2/kafka-clusters/lkc-f3a90de\"},\"region\":\"us-east-1\",\"versions\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/artifact/v1/flink-artifacts/270000021?cloud=changed-cloud\u0026environment=env-00000\u0026region=us-east-1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"artifact/v1\",\"cloud\":\"changed-cloud\",\"display_name\":\"example-display-name\",\"environment\":\"env-00000\",\"id\":270000021,\"kind\":\"FlinkArtifact\",\"metadata\":{\"self\":\"https://api.confluent.cloud/v2/kafka-clusters/lkc-f3a90de\"},\"region\":\"us-east-1\",\"versions\":[]}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/artifact/v1/flink-artifacts/270000021?cloud=changed-cloud\u0026environment=env-00000\u0026region=us-east-1",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/artifact/v1/flink-artifacts/270000021?cloud=AWS\u0026environment=env-00000\u0026region=us-east-1",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

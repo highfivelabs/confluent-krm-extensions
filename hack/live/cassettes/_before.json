@@ -1,0 +1,22 @@
+{
+  "recorded": "2026-11-20T23:56:35Z",
+  "target": "Confluent Cloud trial",
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/org/v2/environments",
+      "body": "{\"display_name\":\"{{run}}\",\"stream_governance_config\":{\"package\":\"ESSENTIALS\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\n  \"api_version\": \"org/v2\",\n  \"display_name\": \"{{run}}\",\n  \"id\": \"env-qqkyyd\",\n  \"kind\": \"Environment\",\n  \"metadata\": {\n    \"created_at\": \"2026-11-20T23:56:34.888332Z\",\n    \"resource_name\": \"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\",\n    \"self\": \"{{baseURL}}/org/v2/environments/env-qqkyyd\",\n    \"updated_at\": \"2026-11-20T23:56:34.888332Z\"\n  },\n  \"stream_governance_config\": {\n    \"package\": \"ESSENTIALS\"\n  }\n}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/iam/v2/service-accounts",
+      "body": "{\"description\":\"krm live test; deleted at the end of the run\",\"display_name\":\"{{run}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\n  \"api_version\": \"iam/v2\",\n  \"description\": \"krm live test; deleted at the end of the run\",\n  \"display_name\": \"{{run}}\",\n  \"id\": \"sa-5m3099z\",\n  \"kind\": \"ServiceAccount\",\n  \"metadata\": {\n    \"created_at\": \"2026-11-20T23:56:35.13671Z\",\n    \"resource_name\": \"crn://confluent.cloud/service-account=sa-5m3099z\",\n    \"self\": \"{{baseURL}}/iam/v2/service-accounts/sa-5m3099z\",\n    \"updated_at\": \"2026-11-20T23:56:35.13671Z\"\n  }\n}\n"
+    }
+  ]
+}

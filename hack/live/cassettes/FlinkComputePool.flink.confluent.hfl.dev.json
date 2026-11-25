@@ -1,0 +1,115 @@
+{
+  "recorded": "2026-11-20T23:57:25Z",
+  "target": "Confluent Cloud trial",
+  "vars": {
+    "ca": "op-Xl6A",
+    "env": "env-qqkyyd",
+    "envcrn": "crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd",
+    "hook": "i-JQlZP",
+    "idp": "op-5AZ3",
+    "sa": "sa-5m3099z"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/fcpm/v2/compute-pools",
+      "body": "{\"spec\":{\"cloud\":\"GCP\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\"},\"max_cfu\":5,\"region\":\"us-central1\"}}",
+      "status": 202,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"fcpm/v2\",\"id\":\"lfcp-w7wgk3j\",\"kind\":\"ComputePool\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:12.015145Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/flink-region=gcp.us-central1/compute-pool=lfcp-w7wgk3j\",\"self\":\"{{baseURL}}/fcpm/v2/compute-pools/lfcp-w7wgk3j\",\"updated_at\":\"2026-11-20T23:57:12.015145Z\"},\"spec\":{\"cloud\":\"GCP\",\"default_pool\":false,\"display_name\":\"{{name}}\",\"enable_ai\":false,\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"\",\"resource_name\":\"\"},\"max_cfu\":5,\"network\":{\"environment\":\"env-qqkyyd\",\"id\":\"n-69k915\",\"related\":\"\",\"resource_name\":\"\"},\"region\":\"us-central1\"},\"status\":{\"current_cfu\":0,\"phase\":\"PROVISIONING\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pools/lfcp-w7wgk3j?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"fcpm/v2\",\"id\":\"lfcp-w7wgk3j\",\"kind\":\"ComputePool\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:12.015145Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/flink-region=gcp.us-central1/compute-pool=lfcp-w7wgk3j\",\"self\":\"{{baseURL}}/fcpm/v2/compute-pools/lfcp-w7wgk3j\",\"updated_at\":\"2026-11-20T23:57:12.41214Z\"},\"spec\":{\"cloud\":\"GCP\",\"default_pool\":false,\"display_name\":\"{{name}}\",\"enable_ai\":false,\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"\",\"resource_name\":\"\"},\"max_cfu\":5,\"network\":{\"environment\":\"env-qqkyyd\",\"id\":\"n-69k915\",\"related\":\"\",\"resource_name\":\"\"},\"region\":\"us-central1\"},\"status\":{\"current_cfu\":0,\"phase\":\"PROVISIONING\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pools/lfcp-w7wgk3j?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"fcpm/v2\",\"id\":\"lfcp-w7wgk3j\",\"kind\":\"ComputePool\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:12.015145Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/flink-region=gcp.us-central1/compute-pool=lfcp-w7wgk3j\",\"self\":\"{{baseURL}}/fcpm/v2/compute-pools/lfcp-w7wgk3j\",\"updated_at\":\"2026-11-20T23:57:12.41214Z\"},\"spec\":{\"cloud\":\"GCP\",\"default_pool\":false,\"display_name\":\"{{name}}\",\"enable_ai\":false,\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"\",\"resource_name\":\"\"},\"max_cfu\":5,\"network\":{\"environment\":\"env-qqkyyd\",\"id\":\"n-69k915\",\"related\":\"\",\"resource_name\":\"\"},\"region\":\"us-central1\"},\"status\":{\"current_cfu\":0,\"phase\":\"PROVISIONING\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/fcpm/v2/compute-pools/lfcp-w7wgk3j",
+      "body": "{\"spec\":{\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":\"env-qqkyyd\"},\"max_cfu\":5}}",
+      "status": 409,
+      "contentType": "application/json",
+      "response": "{\n  \"errors\": [\n    {\n      \"id\": \"e8e3d417500b7bef7c3a229e41e45f78\",\n      \"status\": \"409\",\n      \"detail\": \"you can't update a compute pool that is being provisioned or is already being deleted\",\n      \"source\": {}\n    }\n  ]\n}"
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pools/lfcp-w7wgk3j?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"fcpm/v2\",\"id\":\"lfcp-w7wgk3j\",\"kind\":\"ComputePool\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:12.015145Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/flink-region=gcp.us-central1/compute-pool=lfcp-w7wgk3j\",\"self\":\"{{baseURL}}/fcpm/v2/compute-pools/lfcp-w7wgk3j\",\"updated_at\":\"2026-11-20T23:57:12.41214Z\"},\"spec\":{\"cloud\":\"GCP\",\"default_pool\":false,\"display_name\":\"{{name}}\",\"enable_ai\":false,\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"\",\"resource_name\":\"\"},\"max_cfu\":5,\"network\":{\"environment\":\"env-qqkyyd\",\"id\":\"n-69k915\",\"related\":\"\",\"resource_name\":\"\"},\"region\":\"us-central1\"},\"status\":{\"current_cfu\":0,\"phase\":\"PROVISIONED\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/fcpm/v2/compute-pools/lfcp-w7wgk3j",
+      "body": "{\"spec\":{\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":\"env-qqkyyd\"},\"max_cfu\":5}}",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"fcpm/v2\",\"id\":\"lfcp-w7wgk3j\",\"kind\":\"ComputePool\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:12.015145Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/flink-region=gcp.us-central1/compute-pool=lfcp-w7wgk3j\",\"self\":\"{{baseURL}}/fcpm/v2/compute-pools/lfcp-w7wgk3j\",\"updated_at\":\"2026-11-20T23:57:23.292029Z\"},\"spec\":{\"cloud\":\"GCP\",\"default_pool\":false,\"display_name\":\"{{name}}-b\",\"enable_ai\":false,\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"\",\"resource_name\":\"\"},\"max_cfu\":5,\"network\":{\"environment\":\"env-qqkyyd\",\"id\":\"n-69k915\",\"related\":\"\",\"resource_name\":\"\"},\"region\":\"us-central1\"},\"status\":{\"current_cfu\":0,\"phase\":\"PROVISIONED\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pools/lfcp-w7wgk3j?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"fcpm/v2\",\"id\":\"lfcp-w7wgk3j\",\"kind\":\"ComputePool\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:12.015145Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/flink-region=gcp.us-central1/compute-pool=lfcp-w7wgk3j\",\"self\":\"{{baseURL}}/fcpm/v2/compute-pools/lfcp-w7wgk3j\",\"updated_at\":\"2026-11-20T23:57:23.292029Z\"},\"spec\":{\"cloud\":\"GCP\",\"default_pool\":false,\"display_name\":\"{{name}}-b\",\"enable_ai\":false,\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"\",\"resource_name\":\"\"},\"max_cfu\":5,\"network\":{\"environment\":\"env-qqkyyd\",\"id\":\"n-69k915\",\"related\":\"\",\"resource_name\":\"\"},\"region\":\"us-central1\"},\"status\":{\"current_cfu\":0,\"phase\":\"PROVISIONED\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pools/lfcp-w7wgk3j?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"fcpm/v2\",\"id\":\"lfcp-w7wgk3j\",\"kind\":\"ComputePool\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:12.015145Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/flink-region=gcp.us-central1/compute-pool=lfcp-w7wgk3j\",\"self\":\"{{baseURL}}/fcpm/v2/compute-pools/lfcp-w7wgk3j\",\"updated_at\":\"2026-11-20T23:57:23.292029Z\"},\"spec\":{\"cloud\":\"GCP\",\"default_pool\":false,\"display_name\":\"{{name}}-b\",\"enable_ai\":false,\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"\",\"resource_name\":\"\"},\"max_cfu\":5,\"network\":{\"environment\":\"env-qqkyyd\",\"id\":\"n-69k915\",\"related\":\"\",\"resource_name\":\"\"},\"region\":\"us-central1\"},\"status\":{\"current_cfu\":0,\"phase\":\"PROVISIONED\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/fcpm/v2/compute-pools/lfcp-w7wgk3j",
+      "body": "{\"spec\":{\"default_pool\":false,\"display_name\":\"{{name}}-c\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"\",\"resource_name\":\"\"},\"max_cfu\":5}}",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"fcpm/v2\",\"id\":\"lfcp-w7wgk3j\",\"kind\":\"ComputePool\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:12.015145Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/flink-region=gcp.us-central1/compute-pool=lfcp-w7wgk3j\",\"self\":\"{{baseURL}}/fcpm/v2/compute-pools/lfcp-w7wgk3j\",\"updated_at\":\"2026-11-20T23:57:23.984468Z\"},\"spec\":{\"cloud\":\"GCP\",\"default_pool\":false,\"display_name\":\"{{name}}-c\",\"enable_ai\":false,\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"\",\"resource_name\":\"\"},\"max_cfu\":5,\"network\":{\"environment\":\"env-qqkyyd\",\"id\":\"n-69k915\",\"related\":\"\",\"resource_name\":\"\"},\"region\":\"us-central1\"},\"status\":{\"current_cfu\":0,\"phase\":\"PROVISIONED\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pools/lfcp-w7wgk3j?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"fcpm/v2\",\"id\":\"lfcp-w7wgk3j\",\"kind\":\"ComputePool\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:12.015145Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/flink-region=gcp.us-central1/compute-pool=lfcp-w7wgk3j\",\"self\":\"{{baseURL}}/fcpm/v2/compute-pools/lfcp-w7wgk3j\",\"updated_at\":\"2026-11-20T23:57:23.984468Z\"},\"spec\":{\"cloud\":\"GCP\",\"default_pool\":false,\"display_name\":\"{{name}}-c\",\"enable_ai\":false,\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"\",\"resource_name\":\"\"},\"max_cfu\":5,\"network\":{\"environment\":\"env-qqkyyd\",\"id\":\"n-69k915\",\"related\":\"\",\"resource_name\":\"\"},\"region\":\"us-central1\"},\"status\":{\"current_cfu\":0,\"phase\":\"PROVISIONED\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/fcpm/v2/compute-pools/lfcp-w7wgk3j",
+      "body": "{\"spec\":{\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":\"env-qqkyyd\"},\"max_cfu\":5}}",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"fcpm/v2\",\"id\":\"lfcp-w7wgk3j\",\"kind\":\"ComputePool\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:12.015145Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/flink-region=gcp.us-central1/compute-pool=lfcp-w7wgk3j\",\"self\":\"{{baseURL}}/fcpm/v2/compute-pools/lfcp-w7wgk3j\",\"updated_at\":\"2026-11-20T23:57:24.442723Z\"},\"spec\":{\"cloud\":\"GCP\",\"default_pool\":false,\"display_name\":\"{{name}}-b\",\"enable_ai\":false,\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"\",\"resource_name\":\"\"},\"max_cfu\":5,\"network\":{\"environment\":\"env-qqkyyd\",\"id\":\"n-69k915\",\"related\":\"\",\"resource_name\":\"\"},\"region\":\"us-central1\"},\"status\":{\"current_cfu\":0,\"phase\":\"PROVISIONED\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pools/lfcp-w7wgk3j?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"fcpm/v2\",\"id\":\"lfcp-w7wgk3j\",\"kind\":\"ComputePool\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:12.015145Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/flink-region=gcp.us-central1/compute-pool=lfcp-w7wgk3j\",\"self\":\"{{baseURL}}/fcpm/v2/compute-pools/lfcp-w7wgk3j\",\"updated_at\":\"2026-11-20T23:57:24.442723Z\"},\"spec\":{\"cloud\":\"GCP\",\"default_pool\":false,\"display_name\":\"{{name}}-b\",\"enable_ai\":false,\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"\",\"resource_name\":\"\"},\"max_cfu\":5,\"network\":{\"environment\":\"env-qqkyyd\",\"id\":\"n-69k915\",\"related\":\"\",\"resource_name\":\"\"},\"region\":\"us-central1\"},\"status\":{\"current_cfu\":0,\"phase\":\"PROVISIONED\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/fcpm/v2/compute-pools/lfcp-w7wgk3j?environment=env-qqkyyd",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pools/lfcp-w7wgk3j?environment=env-qqkyyd",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\n  \"errors\": [\n    {\n      \"id\": \"36accd4baa9d2c5fff84acc1e95ef1b6\",\n      \"status\": \"404\",\n      \"detail\": \"compute pool is deleted\",\n      \"source\": {}\n    }\n  ]\n}"
+    }
+  ]
+}

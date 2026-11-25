@@ -1,0 +1,93 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/iam/v2/sso/group-mappings",
+      "body": "{\"description\":\"Admin access to production environment for Engineering\",\"display_name\":\"Application Developers\",\"filter\":\"\\\"kafka\\\" in groups \\u0026\\u0026 \\\"all\\\" in groups || \\\"everyone\\\" in groups\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam.v2/sso\",\"description\":\"Admin access to production environment for Engineering\",\"display_name\":\"Application Developers\",\"filter\":\"\\\"kafka\\\" in groups \\u0026\\u0026 \\\"all\\\" in groups || \\\"everyone\\\" in groups\",\"id\":270000018,\"kind\":\"GroupMapping\",\"principal\":\"group-a1b2\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/sso/group-mappings/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam.v2/sso\",\"description\":\"Admin access to production environment for Engineering\",\"display_name\":\"Application Developers\",\"filter\":\"\\\"kafka\\\" in groups \\u0026\\u0026 \\\"all\\\" in groups || \\\"everyone\\\" in groups\",\"id\":270000018,\"kind\":\"GroupMapping\",\"principal\":\"group-a1b2\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/sso/group-mappings/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam.v2/sso\",\"description\":\"Admin access to production environment for Engineering\",\"display_name\":\"Application Developers\",\"filter\":\"\\\"kafka\\\" in groups \\u0026\\u0026 \\\"all\\\" in groups || \\\"everyone\\\" in groups\",\"id\":270000018,\"kind\":\"GroupMapping\",\"principal\":\"group-a1b2\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/iam/v2/sso/group-mappings/270000018",
+      "body": "{\"description\":\"changed-description\",\"display_name\":\"Application Developers\",\"filter\":\"\\\"kafka\\\" in groups \\u0026\\u0026 \\\"all\\\" in groups || \\\"everyone\\\" in groups\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam.v2/sso\",\"description\":\"changed-description\",\"display_name\":\"Application Developers\",\"filter\":\"\\\"kafka\\\" in groups \\u0026\\u0026 \\\"all\\\" in groups || \\\"everyone\\\" in groups\",\"id\":270000018,\"kind\":\"GroupMapping\",\"principal\":\"group-a1b2\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/sso/group-mappings/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam.v2/sso\",\"description\":\"changed-description\",\"display_name\":\"Application Developers\",\"filter\":\"\\\"kafka\\\" in groups \\u0026\\u0026 \\\"all\\\" in groups || \\\"everyone\\\" in groups\",\"id\":270000018,\"kind\":\"GroupMapping\",\"principal\":\"group-a1b2\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/iam/v2/sso/group-mappings/270000018",
+      "body": "{\"description\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam.v2/sso\",\"description\":\"hfl-live-drift\",\"display_name\":\"Application Developers\",\"filter\":\"\\\"kafka\\\" in groups \\u0026\\u0026 \\\"all\\\" in groups || \\\"everyone\\\" in groups\",\"id\":270000018,\"kind\":\"GroupMapping\",\"principal\":\"group-a1b2\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/sso/group-mappings/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam.v2/sso\",\"description\":\"hfl-live-drift\",\"display_name\":\"Application Developers\",\"filter\":\"\\\"kafka\\\" in groups \\u0026\\u0026 \\\"all\\\" in groups || \\\"everyone\\\" in groups\",\"id\":270000018,\"kind\":\"GroupMapping\",\"principal\":\"group-a1b2\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/iam/v2/sso/group-mappings/270000018",
+      "body": "{\"description\":\"changed-description\",\"display_name\":\"Application Developers\",\"filter\":\"\\\"kafka\\\" in groups \\u0026\\u0026 \\\"all\\\" in groups || \\\"everyone\\\" in groups\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam.v2/sso\",\"description\":\"changed-description\",\"display_name\":\"Application Developers\",\"filter\":\"\\\"kafka\\\" in groups \\u0026\\u0026 \\\"all\\\" in groups || \\\"everyone\\\" in groups\",\"id\":270000018,\"kind\":\"GroupMapping\",\"principal\":\"group-a1b2\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/sso/group-mappings/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam.v2/sso\",\"description\":\"changed-description\",\"display_name\":\"Application Developers\",\"filter\":\"\\\"kafka\\\" in groups \\u0026\\u0026 \\\"all\\\" in groups || \\\"everyone\\\" in groups\",\"id\":270000018,\"kind\":\"GroupMapping\",\"principal\":\"group-a1b2\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/iam/v2/sso/group-mappings/270000018",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/sso/group-mappings/270000018",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

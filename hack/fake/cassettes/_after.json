@@ -1,0 +1,24 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "DELETE",
+      "path": "/iam/v2/service-accounts/280000002",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/org/v2/environments/280000001",
+      "status": 204
+    }
+  ]
+}

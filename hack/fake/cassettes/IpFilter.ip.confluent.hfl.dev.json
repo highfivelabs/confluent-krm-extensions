@@ -1,0 +1,93 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/iam/v2/ip-filters",
+      "body": "{\"filter_name\":\"Management API Rules\",\"ip_groups\":[],\"resource_group\":\"management\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"filter_name\":\"Management API Rules\",\"id\":270000019,\"ip_groups\":[],\"kind\":\"IpFilter\",\"resource_group\":\"management\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/ip-filters/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"filter_name\":\"Management API Rules\",\"id\":270000019,\"ip_groups\":[],\"kind\":\"IpFilter\",\"resource_group\":\"management\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/ip-filters/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"filter_name\":\"Management API Rules\",\"id\":270000019,\"ip_groups\":[],\"kind\":\"IpFilter\",\"resource_group\":\"management\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/iam/v2/ip-filters/270000019",
+      "body": "{\"filter_name\":\"changed-filter_name\",\"ip_groups\":[],\"resource_group\":\"management\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"filter_name\":\"changed-filter_name\",\"id\":270000019,\"ip_groups\":[],\"kind\":\"IpFilter\",\"resource_group\":\"management\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/ip-filters/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"filter_name\":\"changed-filter_name\",\"id\":270000019,\"ip_groups\":[],\"kind\":\"IpFilter\",\"resource_group\":\"management\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/iam/v2/ip-filters/270000019",
+      "body": "{\"filter_name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"filter_name\":\"hfl-live-drift\",\"id\":270000019,\"ip_groups\":[],\"kind\":\"IpFilter\",\"resource_group\":\"management\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/ip-filters/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"filter_name\":\"hfl-live-drift\",\"id\":270000019,\"ip_groups\":[],\"kind\":\"IpFilter\",\"resource_group\":\"management\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/iam/v2/ip-filters/270000019",
+      "body": "{\"filter_name\":\"changed-filter_name\",\"ip_groups\":[],\"resource_group\":\"management\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"filter_name\":\"changed-filter_name\",\"id\":270000019,\"ip_groups\":[],\"kind\":\"IpFilter\",\"resource_group\":\"management\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/ip-filters/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"filter_name\":\"changed-filter_name\",\"id\":270000019,\"ip_groups\":[],\"kind\":\"IpFilter\",\"resource_group\":\"management\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/iam/v2/ip-filters/270000019",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/ip-filters/270000019",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/networking/v1/network-link-services",
+      "body": "{\"spec\":{\"display_name\":\"example-display-name\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"network\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"display_name\":\"example-display-name\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000033,\"network\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/networking/v1/network-link-services/270000033?environment=example-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"display_name\":\"example-display-name\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000033,\"network\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/networking/v1/network-link-services/270000033?environment=example-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"display_name\":\"example-display-name\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000033,\"network\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/networking/v1/network-link-services/270000033",
+      "body": "{\"spec\":{\"display_name\":\"changed-display_name\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"display_name\":\"changed-display_name\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000033,\"network\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/networking/v1/network-link-services/270000033?environment=example-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"display_name\":\"changed-display_name\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000033,\"network\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/networking/v1/network-link-services/270000033",
+      "body": "{\"spec\":{\"display_name\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"display_name\":\"hfl-live-drift\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000033,\"network\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/networking/v1/network-link-services/270000033?environment=example-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"display_name\":\"hfl-live-drift\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000033,\"network\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/networking/v1/network-link-services/270000033",
+      "body": "{\"spec\":{\"display_name\":\"changed-display_name\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"display_name\":\"changed-display_name\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000033,\"network\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/networking/v1/network-link-services/270000033?environment=example-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"display_name\":\"changed-display_name\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000033,\"network\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/networking/v1/network-link-services/270000033?environment=example-id",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/networking/v1/network-link-services/270000033?environment=example-id",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

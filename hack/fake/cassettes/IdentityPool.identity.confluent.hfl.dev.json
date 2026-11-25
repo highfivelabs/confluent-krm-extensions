@@ -1,0 +1,104 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/iam/v2/identity-providers",
+      "body": "{\"description\":\"krm live test\",\"display_name\":\"{{name}}\",\"issuer\":\"https://accounts.google.com\",\"jwks_uri\":\"https://www.googleapis.com/oauth2/v3/certs\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"description\":\"krm live test\",\"display_name\":\"{{name}}\",\"id\":280000003,\"issuer\":\"https://accounts.google.com\",\"jwks_uri\":\"https://www.googleapis.com/oauth2/v3/certs\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/iam/v2/identity-providers/280000003/identity-pools",
+      "body": "{\"description\":\"first\",\"display_name\":\"{{name}}\",\"filter\":\"claims.aud == \\\"hfl-live\\\"\",\"identity_claim\":\"claims.sub\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"description\":\"first\",\"display_name\":\"{{name}}\",\"filter\":\"claims.aud == \\\"hfl-live\\\"\",\"id\":270000005,\"identity_claim\":\"claims.sub\",\"kind\":\"IdentityPool\",\"principal\":\"pool-abc\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/identity-providers/280000003/identity-pools/270000005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"description\":\"first\",\"display_name\":\"{{name}}\",\"filter\":\"claims.aud == \\\"hfl-live\\\"\",\"id\":270000005,\"identity_claim\":\"claims.sub\",\"kind\":\"IdentityPool\",\"principal\":\"pool-abc\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/identity-providers/280000003/identity-pools/270000005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"description\":\"first\",\"display_name\":\"{{name}}\",\"filter\":\"claims.aud == \\\"hfl-live\\\"\",\"id\":270000005,\"identity_claim\":\"claims.sub\",\"kind\":\"IdentityPool\",\"principal\":\"pool-abc\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/iam/v2/identity-providers/280000003/identity-pools/270000005",
+      "body": "{\"description\":\"second\",\"display_name\":\"{{name}}\",\"filter\":\"claims.aud == \\\"hfl-live\\\"\",\"identity_claim\":\"claims.sub\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"filter\":\"claims.aud == \\\"hfl-live\\\"\",\"id\":270000005,\"identity_claim\":\"claims.sub\",\"kind\":\"IdentityPool\",\"principal\":\"pool-abc\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/identity-providers/280000003/identity-pools/270000005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"filter\":\"claims.aud == \\\"hfl-live\\\"\",\"id\":270000005,\"identity_claim\":\"claims.sub\",\"kind\":\"IdentityPool\",\"principal\":\"pool-abc\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/iam/v2/identity-providers/280000003/identity-pools/270000005",
+      "body": "{\"description\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"description\":\"hfl-live-drift\",\"display_name\":\"{{name}}\",\"filter\":\"claims.aud == \\\"hfl-live\\\"\",\"id\":270000005,\"identity_claim\":\"claims.sub\",\"kind\":\"IdentityPool\",\"principal\":\"pool-abc\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/identity-providers/280000003/identity-pools/270000005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"description\":\"hfl-live-drift\",\"display_name\":\"{{name}}\",\"filter\":\"claims.aud == \\\"hfl-live\\\"\",\"id\":270000005,\"identity_claim\":\"claims.sub\",\"kind\":\"IdentityPool\",\"principal\":\"pool-abc\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/iam/v2/identity-providers/280000003/identity-pools/270000005",
+      "body": "{\"description\":\"second\",\"display_name\":\"{{name}}\",\"filter\":\"claims.aud == \\\"hfl-live\\\"\",\"identity_claim\":\"claims.sub\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"filter\":\"claims.aud == \\\"hfl-live\\\"\",\"id\":270000005,\"identity_claim\":\"claims.sub\",\"kind\":\"IdentityPool\",\"principal\":\"pool-abc\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/identity-providers/280000003/identity-pools/270000005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"filter\":\"claims.aud == \\\"hfl-live\\\"\",\"id\":270000005,\"identity_claim\":\"claims.sub\",\"kind\":\"IdentityPool\",\"principal\":\"pool-abc\",\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/iam/v2/identity-providers/280000003/identity-pools/270000005",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/identity-providers/280000003/identity-pools/270000005",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/iam/v2/identity-providers/280000003",
+      "status": 204
+    }
+  ]
+}

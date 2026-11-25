@@ -1,0 +1,93 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/notifications/v1/resource-subscriptions",
+      "body": "{\"integrations\":[],\"notification_type\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"resource\":\"environment=env-456xy/cloud-cluster=lkc-df123/connector=my_datagen_connector\",\"resource_type\":\"CONNECTOR\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"id\":270000026,\"integrations\":[],\"kind\":\"ResourceSubscription\",\"notification_type\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"resource\":\"environment=env-456xy/cloud-cluster=lkc-df123/connector=my_datagen_connector\",\"resource_type\":\"CONNECTOR\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-subscriptions/270000026",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"id\":270000026,\"integrations\":[],\"kind\":\"ResourceSubscription\",\"notification_type\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"resource\":\"environment=env-456xy/cloud-cluster=lkc-df123/connector=my_datagen_connector\",\"resource_type\":\"CONNECTOR\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-subscriptions/270000026",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"id\":270000026,\"integrations\":[],\"kind\":\"ResourceSubscription\",\"notification_type\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"resource\":\"environment=env-456xy/cloud-cluster=lkc-df123/connector=my_datagen_connector\",\"resource_type\":\"CONNECTOR\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/resource-subscriptions/270000026",
+      "body": "{\"integrations\":[],\"resource\":\"changed-resource\",\"resource_type\":\"CONNECTOR\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"id\":270000026,\"integrations\":[],\"kind\":\"ResourceSubscription\",\"notification_type\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"resource\":\"changed-resource\",\"resource_type\":\"CONNECTOR\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-subscriptions/270000026",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"id\":270000026,\"integrations\":[],\"kind\":\"ResourceSubscription\",\"notification_type\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"resource\":\"changed-resource\",\"resource_type\":\"CONNECTOR\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/resource-subscriptions/270000026",
+      "body": "{\"resource\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"id\":270000026,\"integrations\":[],\"kind\":\"ResourceSubscription\",\"notification_type\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"resource\":\"hfl-live-drift\",\"resource_type\":\"CONNECTOR\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-subscriptions/270000026",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"id\":270000026,\"integrations\":[],\"kind\":\"ResourceSubscription\",\"notification_type\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"resource\":\"hfl-live-drift\",\"resource_type\":\"CONNECTOR\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/resource-subscriptions/270000026",
+      "body": "{\"integrations\":[],\"resource\":\"changed-resource\",\"resource_type\":\"CONNECTOR\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"id\":270000026,\"integrations\":[],\"kind\":\"ResourceSubscription\",\"notification_type\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"resource\":\"changed-resource\",\"resource_type\":\"CONNECTOR\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-subscriptions/270000026",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"id\":270000026,\"integrations\":[],\"kind\":\"ResourceSubscription\",\"notification_type\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"resource\":\"changed-resource\",\"resource_type\":\"CONNECTOR\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/notifications/v1/resource-subscriptions/270000026",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-subscriptions/270000026",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

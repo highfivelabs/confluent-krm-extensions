@@ -1,0 +1,109 @@
+{
+  "recorded": "2026-11-20T23:56:55Z",
+  "target": "Confluent Cloud trial",
+  "vars": {
+    "ca": "op-Xl6A",
+    "env": "env-qqkyyd",
+    "envcrn": "crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd",
+    "idp": "op-5AZ3",
+    "sa": "sa-5m3099z"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/iam/v2/certificate-authorities",
+      "body": "{\"certificate_chain\":\"-----BEGIN CERTIFICATE-----\\nMIIBxjCCAWygAwIBAgIUf+QQw/JBebC8BgKxjx2b6MkeOZ4wCgYIKoZIzj0EAwIw\\nQTELMAkGA1UEBhMCVVMxFzAVBgNVBAoMDkhpZ2ggRml2ZSBMYWJzMRkwFwYDVQQD\\nDBBoZmwtbGl2ZSB0ZXN0IENBMB4XDTI2MTExNjA3Mzg1NVoXDTM2MTExMzA3Mzg1\\nNVowQTELMAkGA1UEBhMCVVMxFzAVBgNVBAoMDkhpZ2ggRml2ZSBMYWJzMRkwFwYD\\nVQQDDBBoZmwtbGl2ZSB0ZXN0IENBMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE\\njxqr5Iw1ELSXBgGmbHTgNH/Adela1s10mRsejoBW/qQaP29KAoyF1Dqo2qISACP1\\nVx5KsPmqlUfvTdG0K2cLeqNCMEAwHQYDVR0OBBYEFPH56j/u7PgKFBQjQ2INRDpX\\nQVPoMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgEGMAoGCCqGSM49BAMC\\nA0gAMEUCIEtJknZVF2xkliCuXpTE7ZFwVcXvxySPD0OiGUOJWLF4AiEA1nUgf+o0\\n7mRU/rDVz/fD0qv8Ij07Q0pSPBbbnl5jlpc=\\n-----END CERTIFICATE-----\\n\",\"certificate_chain_filename\":\"hfl-live-ca.pem\",\"description\":\"krm live test\",\"display_name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"kind\":\"CertificateAuthority\",\"metadata\":{\"self\":\"https://confluent.cloud/api/iam/v2/certificate-authorities/op-Xl6A\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/identity-provider=op-Xl6A\",\"created_at\":\"2026-11-20T23:56:52.562552Z\",\"updated_at\":\"2026-11-20T23:56:52.562552Z\"},\"id\":\"op-Xl6A\",\"display_name\":\"{{name}}\",\"description\":\"krm live test\",\"state\":\"ENABLED\",\"fingerprints\":[\"3463160D9A1A37260202E4E7D4BA109045F22CF4\"],\"expiration_dates\":[\"2036-11-13T07:38:55Z\"],\"serial_numbers\":[\"7FE410C3F24179B0BC0602B18F1D9BE8C91E399E\"],\"certificate_chain_filename\":\"hfl-live-ca.pem\",\"require_crl_on_client_certificate\":false}"
+    },
+    {
+      "method": "POST",
+      "path": "/iam/v2/certificate-authorities/op-Xl6A/identity-pools",
+      "body": "{\"description\":\"first\",\"display_name\":\"{{name}}\",\"external_identifier\":\"CN\",\"filter\":\"O=='hfl-live'\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"kind\":\"CertificateIdentityPool\",\"metadata\":{\"self\":\"https://confluent.cloud/api/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/identity-provider=op-Xl6A/identity-pool=pool-kayB1\",\"created_at\":\"2026-11-20T23:56:52.897262Z\",\"updated_at\":\"2026-11-20T23:56:52.897262Z\"},\"id\":\"pool-kayB1\",\"display_name\":\"{{name}}\",\"description\":\"first\",\"external_identifier\":\"CN\",\"filter\":\"O=='hfl-live'\",\"state\":\"ENABLED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"kind\":\"CertificateIdentityPool\",\"metadata\":{\"self\":\"https://confluent.cloud/api/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/identity-provider=op-Xl6A/identity-pool=pool-kayB1\",\"created_at\":\"2026-11-20T23:56:52.897262Z\",\"updated_at\":\"2026-11-20T23:56:52.897262Z\"},\"id\":\"pool-kayB1\",\"display_name\":\"{{name}}\",\"description\":\"first\",\"external_identifier\":\"CN\",\"filter\":\"O=='hfl-live'\",\"state\":\"ENABLED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"kind\":\"CertificateIdentityPool\",\"metadata\":{\"self\":\"https://confluent.cloud/api/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/identity-provider=op-Xl6A/identity-pool=pool-kayB1\",\"created_at\":\"2026-11-20T23:56:52.897262Z\",\"updated_at\":\"2026-11-20T23:56:52.897262Z\"},\"id\":\"pool-kayB1\",\"display_name\":\"{{name}}\",\"description\":\"first\",\"external_identifier\":\"CN\",\"filter\":\"O=='hfl-live'\",\"state\":\"ENABLED\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1",
+      "body": "{\"description\":\"second\",\"display_name\":\"{{name}}\",\"external_identifier\":\"CN\",\"filter\":\"O=='hfl-live'\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"kind\":\"CertificateIdentityPool\",\"metadata\":{\"self\":\"https://confluent.cloud/api/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/identity-provider=op-Xl6A/identity-pool=pool-kayB1\",\"created_at\":\"2026-11-20T23:56:52.897262Z\",\"updated_at\":\"2026-11-20T23:56:53.528835Z\"},\"id\":\"pool-kayB1\",\"display_name\":\"{{name}}\",\"description\":\"second\",\"external_identifier\":\"CN\",\"filter\":\"O=='hfl-live'\",\"state\":\"ENABLED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"kind\":\"CertificateIdentityPool\",\"metadata\":{\"self\":\"https://confluent.cloud/api/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/identity-provider=op-Xl6A/identity-pool=pool-kayB1\",\"created_at\":\"2026-11-20T23:56:52.897262Z\",\"updated_at\":\"2026-11-20T23:56:53.528835Z\"},\"id\":\"pool-kayB1\",\"display_name\":\"{{name}}\",\"description\":\"second\",\"external_identifier\":\"CN\",\"filter\":\"O=='hfl-live'\",\"state\":\"ENABLED\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1",
+      "body": "{\"description\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"kind\":\"CertificateIdentityPool\",\"metadata\":{\"self\":\"https://confluent.cloud/api/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/identity-provider=op-Xl6A/identity-pool=pool-kayB1\",\"created_at\":\"2026-11-20T23:56:52.897262Z\",\"updated_at\":\"2026-11-20T23:56:53.950964Z\"},\"id\":\"pool-kayB1\",\"display_name\":\"{{name}}\",\"description\":\"hfl-live-drift\",\"external_identifier\":\"CN\",\"filter\":\"O=='hfl-live'\",\"state\":\"ENABLED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"kind\":\"CertificateIdentityPool\",\"metadata\":{\"self\":\"https://confluent.cloud/api/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/identity-provider=op-Xl6A/identity-pool=pool-kayB1\",\"created_at\":\"2026-11-20T23:56:52.897262Z\",\"updated_at\":\"2026-11-20T23:56:53.950964Z\"},\"id\":\"pool-kayB1\",\"display_name\":\"{{name}}\",\"description\":\"hfl-live-drift\",\"external_identifier\":\"CN\",\"filter\":\"O=='hfl-live'\",\"state\":\"ENABLED\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1",
+      "body": "{\"description\":\"second\",\"display_name\":\"{{name}}\",\"external_identifier\":\"CN\",\"filter\":\"O=='hfl-live'\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"kind\":\"CertificateIdentityPool\",\"metadata\":{\"self\":\"https://confluent.cloud/api/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/identity-provider=op-Xl6A/identity-pool=pool-kayB1\",\"created_at\":\"2026-11-20T23:56:52.897262Z\",\"updated_at\":\"2026-11-20T23:56:54.406641Z\"},\"id\":\"pool-kayB1\",\"display_name\":\"{{name}}\",\"description\":\"second\",\"external_identifier\":\"CN\",\"filter\":\"O=='hfl-live'\",\"state\":\"ENABLED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"kind\":\"CertificateIdentityPool\",\"metadata\":{\"self\":\"https://confluent.cloud/api/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/identity-provider=op-Xl6A/identity-pool=pool-kayB1\",\"created_at\":\"2026-11-20T23:56:52.897262Z\",\"updated_at\":\"2026-11-20T23:56:54.406641Z\"},\"id\":\"pool-kayB1\",\"display_name\":\"{{name}}\",\"description\":\"second\",\"external_identifier\":\"CN\",\"filter\":\"O=='hfl-live'\",\"state\":\"ENABLED\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"kind\":\"CertificateIdentityPool\",\"metadata\":{\"self\":\"https://confluent.cloud/api/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/identity-provider=op-Xl6A/identity-pool=pool-kayB1\",\"created_at\":\"2026-11-20T23:56:52.897262Z\",\"updated_at\":\"2026-11-20T23:56:54.865872Z\",\"deleted_at\":\"2026-11-20T23:56:54.865872Z\"},\"id\":\"pool-kayB1\",\"display_name\":\"{{name}}\",\"description\":\"second\",\"external_identifier\":\"CN\",\"filter\":\"O=='hfl-live'\",\"state\":\"DELETED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/certificate-authorities/op-Xl6A/identity-pools/pool-kayB1",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"http_error_code\":404,\"error_code\":70,\"message\":\"Cert identity pool pool-kayB1 either doesn't exist or is deleted.\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/iam/v2/certificate-authorities/op-Xl6A",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"kind\":\"CertificateAuthority\",\"metadata\":{\"self\":\"https://confluent.cloud/api/iam/v2/certificate-authorities/op-Xl6A\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/identity-provider=op-Xl6A\",\"created_at\":\"2026-11-20T23:56:52.562552Z\",\"updated_at\":\"2026-11-20T23:56:55.417881Z\",\"deleted_at\":\"2026-11-20T23:56:55.417881Z\"},\"id\":\"op-Xl6A\",\"display_name\":\"{{name}}\",\"description\":\"krm live test\",\"state\":\"DELETED\",\"fingerprints\":[\"3463160D9A1A37260202E4E7D4BA109045F22CF4\"],\"expiration_dates\":[\"2036-11-13T07:38:55Z\"],\"serial_numbers\":[\"7FE410C3F24179B0BC0602B18F1D9BE8C91E399E\"],\"certificate_chain_filename\":\"hfl-live-ca.pem\",\"require_crl_on_client_certificate\":false}"
+    }
+  ]
+}

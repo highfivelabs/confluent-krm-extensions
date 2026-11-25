@@ -1,0 +1,41 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/pim/v1/integrations",
+      "body": "{\"config\":{\"customer_iam_role_arn\":\"arn:aws:iam::000000000000:role/{{name}}\",\"kind\":\"AwsIntegrationConfig\"},\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"provider\":\"aws\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"pim/v1\",\"config\":{\"customer_iam_role_arn\":\"arn:aws:iam::000000000000:role/{{name}}\",\"kind\":\"AwsIntegrationConfig\"},\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"id\":270000013,\"kind\":\"Integration\",\"provider\":\"aws\",\"usages\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/pim/v1/integrations/270000013?environment=280000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"pim/v1\",\"config\":{\"customer_iam_role_arn\":\"arn:aws:iam::000000000000:role/{{name}}\",\"kind\":\"AwsIntegrationConfig\"},\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"id\":270000013,\"kind\":\"Integration\",\"provider\":\"aws\",\"usages\":[]}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/pim/v1/integrations/270000013?environment=280000001",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/pim/v1/integrations/270000013?environment=280000001",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

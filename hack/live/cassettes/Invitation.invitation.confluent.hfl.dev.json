@@ -1,0 +1,40 @@
+{
+  "recorded": "2026-11-20T23:56:59Z",
+  "target": "Confluent Cloud trial",
+  "vars": {
+    "ca": "op-Xl6A",
+    "env": "env-qqkyyd",
+    "envcrn": "crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd",
+    "idp": "op-5AZ3",
+    "sa": "sa-5m3099z"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/iam/v2/invitations",
+      "body": "{\"email\":\"{{name}}@example.com\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\n  \"api_version\": \"iam/v2\",\n  \"auth_type\": \"AUTH_TYPE_LOCAL\",\n  \"creator\": {\n    \"api_version\": \"iam/v2\",\n    \"id\": \"sa-q8q8wq2\",\n    \"kind\": \"User\",\n    \"related\": \"{{baseURL}}/iam/v2/users/sa-q8q8wq2\",\n    \"resource_name\": \"crn://confluent.cloud/user=sa-q8q8wq2\"\n  },\n  \"email\": \"{{name}}@example.com\",\n  \"expires_at\": \"2026-11-23T23:56:58.59974Z\",\n  \"id\": \"i-jv5qv2\",\n  \"kind\": \"Invitation\",\n  \"metadata\": {\n    \"created_at\": \"2026-11-20T23:56:58.591734Z\",\n    \"resource_name\": \"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/invitation=i-jv5qv2\",\n    \"self\": \"{{baseURL}}/iam/v2/invitations/i-jv5qv2\",\n    \"updated_at\": \"2026-11-20T23:56:58.59974Z\"\n  },\n  \"status\": \"INVITE_STATUS_SENT\",\n  \"user\": {\n    \"api_version\": \"iam/v2\",\n    \"id\": \"u-8m7525m\",\n    \"kind\": \"User\",\n    \"related\": \"{{baseURL}}/iam/v2/users/u-8m7525m\",\n    \"resource_name\": \"crn://confluent.cloud/user=u-8m7525m\"\n  }\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/invitations/i-jv5qv2",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\n  \"api_version\": \"iam/v2\",\n  \"auth_type\": \"AUTH_TYPE_LOCAL\",\n  \"creator\": {\n    \"api_version\": \"iam/v2\",\n    \"id\": \"sa-q8q8wq2\",\n    \"kind\": \"User\",\n    \"related\": \"{{baseURL}}/iam/v2/users/sa-q8q8wq2\",\n    \"resource_name\": \"crn://confluent.cloud/user=sa-q8q8wq2\"\n  },\n  \"email\": \"{{name}}@example.com\",\n  \"expires_at\": \"2026-11-23T23:56:58.59974Z\",\n  \"id\": \"i-jv5qv2\",\n  \"kind\": \"Invitation\",\n  \"metadata\": {\n    \"created_at\": \"2026-11-20T23:56:58.591734Z\",\n    \"resource_name\": \"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/invitation=i-jv5qv2\",\n    \"self\": \"{{baseURL}}/iam/v2/invitations/i-jv5qv2\",\n    \"updated_at\": \"2026-11-20T23:56:58.59974Z\"\n  },\n  \"status\": \"INVITE_STATUS_SENT\",\n  \"user\": {\n    \"api_version\": \"iam/v2\",\n    \"id\": \"u-8m7525m\",\n    \"kind\": \"User\",\n    \"related\": \"{{baseURL}}/iam/v2/users/u-8m7525m\",\n    \"resource_name\": \"crn://confluent.cloud/user=u-8m7525m\"\n  }\n}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/iam/v2/invitations/i-jv5qv2",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/invitations/i-jv5qv2",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\n  \"errors\": [\n    {\n      \"id\": \"59f0685837238f8620c36d0d19b36476\",\n      \"status\": \"404\",\n      \"detail\": \"Invitation Not Found\",\n      \"source\": {}\n    }\n  ]\n}"
+    }
+  ]
+}

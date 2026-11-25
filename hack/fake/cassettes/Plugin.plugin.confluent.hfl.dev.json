@@ -1,0 +1,100 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/ccpm/v1/plugins",
+      "body": "{\"spec\":{\"cloud\":\"AWS\",\"description\":\"first\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001}}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"AWS\",\"description\":\"first\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"id\":270000015,\"runtime_language\":\"JAVA\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/ccpm/v1/plugins/270000015?environment=280000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"AWS\",\"description\":\"first\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"id\":270000015,\"runtime_language\":\"JAVA\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/ccpm/v1/plugins/270000015?environment=280000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"AWS\",\"description\":\"first\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"id\":270000015,\"runtime_language\":\"JAVA\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/ccpm/v1/plugins/270000015",
+      "body": "{\"spec\":{\"description\":\"second\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001}}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"AWS\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"id\":270000015,\"runtime_language\":\"JAVA\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/ccpm/v1/plugins/270000015?environment=280000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"AWS\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"id\":270000015,\"runtime_language\":\"JAVA\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/ccpm/v1/plugins/270000015?environment=280000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"AWS\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"id\":270000015,\"runtime_language\":\"JAVA\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/ccpm/v1/plugins/270000015",
+      "body": "{\"spec\":{\"description\":\"hfl-live-drift\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"id\":270000015,\"runtime_language\":\"JAVA\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"AWS\",\"description\":\"hfl-live-drift\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"id\":270000015,\"runtime_language\":\"JAVA\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/ccpm/v1/plugins/270000015?environment=280000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"AWS\",\"description\":\"hfl-live-drift\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"id\":270000015,\"runtime_language\":\"JAVA\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/ccpm/v1/plugins/270000015",
+      "body": "{\"spec\":{\"description\":\"second\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001}}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"AWS\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"id\":270000015,\"runtime_language\":\"JAVA\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/ccpm/v1/plugins/270000015?environment=280000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"AWS\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"id\":270000015,\"runtime_language\":\"JAVA\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/ccpm/v1/plugins/270000015?environment=280000001",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/ccpm/v1/plugins/270000015?environment=280000001",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

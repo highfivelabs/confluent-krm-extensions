@@ -1,0 +1,51 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/catalog/v1/entity/type/kafka_topic/name/lsrc-8wgvx:lkc-m80307:example-topic",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"entity\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/catalog/v1/entity/type/kafka_topic/name/lsrc-8wgvx:lkc-m80307:example-topic",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"entity\":{}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/catalog/v1/entity",
+      "body": "{\"entity\":{\"attributes\":{\"description\":\"An example topic\",\"owner\":\"example-team\",\"qualifiedName\":\"lsrc-8wgvx:lkc-m80307:example-topic\"},\"typeName\":\"kafka_topic\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"entity\":{\"attributes\":{\"description\":\"An example topic\",\"owner\":\"example-team\",\"qualifiedName\":\"lsrc-8wgvx:lkc-m80307:example-topic\"},\"typeName\":\"kafka_topic\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/catalog/v1/entity/type/kafka_topic/name/lsrc-8wgvx:lkc-m80307:example-topic",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"entity\":{\"attributes\":{\"description\":\"An example topic\",\"owner\":\"example-team\",\"qualifiedName\":\"lsrc-8wgvx:lkc-m80307:example-topic\"},\"typeName\":\"kafka_topic\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/catalog/v1/entity",
+      "body": "{\"entity\":{}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"entity\":{}}\n"
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+# Copyright 2026 High Five Labs
+# SPDX-License-Identifier: Apache-2.0
+#
+# Live tests (TestEveryKindLive, krm-rest-runtime's kindtest.Live): these
+# kinds, in this order, against the real API. Kinds not listed are not run
+# live. They skip, naming the secret, until it exists in Secret Manager; then
+#   KRM_LIVE=1 go test -tags live -run TestEveryKindLive -v .
+# Everything a run makes is named hfl-live-<stamp>-<hex>, deleted at the
+# end; the sweep deletes older leftovers. How it works and what the {{...}}
+# templates mean: krm-rest-runtime docs/live.md.
+#
+# The key is a Cloud API key (global scope) of a service account with
+# OrganizationAdmin, in a trial organization. A run makes one environment
+# and one service account of its own, and deletes them at the end; nothing
+# it makes is put in an environment it did not make. Only the control plane
+# is tested (data-plane kinds are not generated). What costs money:
+#   - KafkaCluster: one BASIC, single-zone cluster, deleted as soon as its
+#     test ends (pass or fail). Basic clusters bill per use: cents.
+#   - FlinkComputePool: the minimum max_cfu (5); a pool bills only for the
+#     statements it runs, and none are.
+# Kinds that would bill by the hour (dedicated clusters, ksqlDB, private
+# networking) or need outside resources are listed with skip: and why.
+secret: krm-live-confluent      # JSON: {"apiKey": "...", "apiSecret": "..."}
+target: Confluent Cloud trial
+
+before:
+- {method: POST, path: /org/v2/environments, body: {display_name: "{{run}}", stream_governance_config: {package: ESSENTIALS}}, save: {env: id, envcrn: metadata/resource_name}}
+- {method: POST, path: /iam/v2/service-accounts, body: {display_name: "{{run}}", description: "krm live test; deleted at the end of the run"}, save: {sa: id}}
+after:
+- {method: DELETE, path: "/iam/v2/service-accounts/{{var:sa}}", ok: [404]}
+- {method: DELETE, path: "/org/v2/environments/{{var:env}}", ok: [404]}
+
+sweep:
+- {list: "/iam/v2/api-keys?page_size=100", items: data, name: spec/display_name, id: id, delete: "/iam/v2/api-keys/{id}"}
+- {list: "/iam/v2/identity-providers?page_size=100", items: data, name: display_name, id: id, delete: "/iam/v2/identity-providers/{id}"}
+- {list: "/iam/v2/certificate-authorities?page_size=100", items: data, name: display_name, id: id, delete: "/iam/v2/certificate-authorities/{id}"}
+- {list: "/iam/v2/ip-groups?page_size=100", items: data, name: group_name, id: id, delete: "/iam/v2/ip-groups/{id}"}
+- {list: "/iam/v2/invitations?page_size=100", items: data, name: email, id: id, delete: "/iam/v2/invitations/{id}"}
+- {list: "/notifications/v1/integrations?page_size=100", items: data, name: display_name, id: id, delete: "/notifications/v1/integrations/{id}"}
+- {list: "/iam/v2/service-accounts?page_size=100", items: data, name: display_name, id: id, delete: "/iam/v2/service-accounts/{id}"}
+# Last: an environment goes once what is in it has.
+- {list: "/org/v2/environments?page_size=100", items: data, name: display_name, id: id, delete: "/org/v2/environments/{id}"}
+
+kinds:
+- kind: Environment
+  replaceSample: true
+  spec: {display_name: "{{name}}", stream_governance_config: {package: ESSENTIALS}}
+  change: {display_name: "{{name}}-b"}
+  drift: "{{name}}-c"
+
+- kind: ServiceAccount
+  replaceSample: true
+  spec: {display_name: "{{name}}", description: first}
+  change: {description: second}
+
+- kind: ApiKey
+  replaceSample: true
+  # A Cloud API key (no resource) owned by the run's service account, which
+  # has no role: it can do nothing.
+  spec: {display_name: "{{name}}", description: first, owner: {id: "{{var:sa}}"}}
+  change: {description: second}
+
+- kind: IdentityProvider
+  replaceSample: true
+  spec: {display_name: "{{name}}", description: first, issuer: "https://accounts.google.com", jwks_uri: "https://www.googleapis.com/oauth2/v3/certs"}
+  change: {description: second}
+
+- kind: IdentityPool
+  replaceSample: true
+  before:
+  - {method: POST, path: /iam/v2/identity-providers, body: {display_name: "{{name}}", description: "krm live test", issuer: "https://accounts.google.com", jwks_uri: "https://www.googleapis.com/oauth2/v3/certs"}, save: {idp: id}}
+  after:
+  - {method: DELETE, path: "/iam/v2/identity-providers/{{var:idp}}", ok: [404]}
+  spec: {providerID: "{{var:idp}}", display_name: "{{name}}", description: first, identity_claim: claims.sub, filter: 'claims.aud == "hfl-live"'}
+  change: {description: second}
+
+# A throwaway self-signed CA (its key was discarded when it was made), as
+# PEM text: the API refuses it base64-encoded ("parsed as empty list").
+- kind: CertificateAuthority
+  replaceSample: true
+  spec:
+    display_name: "{{name}}"
+    description: first
+    certificate_chain_filename: hfl-live-ca.pem
+    certificate_chain: &ca |
+      -----BEGIN CERTIFICATE-----
+      MIIBxjCCAWygAwIBAgIUf+QQw/JBebC8BgKxjx2b6MkeOZ4wCgYIKoZIzj0EAwIw
+      QTELMAkGA1UEBhMCVVMxFzAVBgNVBAoMDkhpZ2ggRml2ZSBMYWJzMRkwFwYDVQQD
+      DBBoZmwtbGl2ZSB0ZXN0IENBMB4XDTI2MTExNjA3Mzg1NVoXDTM2MTExMzA3Mzg1
+      NVowQTELMAkGA1UEBhMCVVMxFzAVBgNVBAoMDkhpZ2ggRml2ZSBMYWJzMRkwFwYD
+      VQQDDBBoZmwtbGl2ZSB0ZXN0IENBMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE
+      jxqr5Iw1ELSXBgGmbHTgNH/Adela1s10mRsejoBW/qQaP29KAoyF1Dqo2qISACP1
+      Vx5KsPmqlUfvTdG0K2cLeqNCMEAwHQYDVR0OBBYEFPH56j/u7PgKFBQjQ2INRDpX
+      QVPoMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgEGMAoGCCqGSM49BAMC
+      A0gAMEUCIEtJknZVF2xkliCuXpTE7ZFwVcXvxySPD0OiGUOJWLF4AiEA1nUgf+o0
+      7mRU/rDVz/fD0qv8Ij07Q0pSPBbbnl5jlpc=
+      -----END CERTIFICATE-----
+  change: {description: second}
+
+- kind: CertificatePool
+  replaceSample: true
+  before:
+  - method: POST
+    path: /iam/v2/certificate-authorities
+    body:
+      display_name: "{{name}}"
+      description: krm live test
+      certificate_chain_filename: hfl-live-ca.pem
+      certificate_chain: *ca
+    save: {ca: id}
+  after:
+  - {method: DELETE, path: "/iam/v2/certificate-authorities/{{var:ca}}", ok: [404]}
+  spec: {certificateAuthorityID: "{{var:ca}}", display_name: "{{name}}", description: first, external_identifier: CN, filter: "O=='hfl-live'"}
+  change: {description: second}
+
+- kind: IpGroup
+  replaceSample: true
+  # Documentation ranges (RFC 5737); a group alone filters nothing.
+  spec: {group_name: "{{name}}", cidr_blocks: [192.0.2.0/24]}
+  change: {cidr_blocks: [198.51.100.0/24]}
+  drift: [203.0.113.0/24]
+  driftFull: true                # a PATCH without group_name is refused
+
+- kind: Invitation
+  replaceSample: true
+  # example.com takes no mail: nobody is emailed.
+  spec: {email: "{{name}}@example.com"}
+
+- kind: NotificationsIntegration
+  replaceSample: true
+  spec: {display_name: "{{name}}", target: {kind: Webhook, url: "https://example.com/hfl-live"}}
+  change: {display_name: "{{name}}-b"}
+  drift: "{{name}}-c"
+
+# An optional notification type ("Confluent Cloud commit 80% consumed"),
+# sent to a webhook on example.com.
+- kind: NotificationsSubscription
+  replaceSample: true
+  before:
+  - {method: POST, path: /notifications/v1/integrations, body: {display_name: "{{name}}", target: {kind: Webhook, url: "https://example.com/hfl-live"}}, save: {hook: id}}
+  after:
+  - {method: DELETE, path: "/notifications/v1/integrations/{{var:hook}}", ok: [404]}
+  spec: {notification_type: {id: nt-p55Ap}, integrations: [{id: "{{var:hook}}"}], current_state: ENABLED}
+  change: {current_state: DISABLED}
+  drift: ENABLED
+
+# The run's environment, named by its CRN: the API reads it back so.
+- kind: NotificationsResourcePreference
+  replaceSample: true
+  spec: {resource: "{{var:envcrn}}", resource_type: ENVIRONMENT, current_state: DISABLED}
+  change: {current_state: ENABLED}
+  drift: DISABLED
+
+- kind: ProviderIntegration
+  replaceSample: true
+  spec: {display_name: "{{name}}", provider: aws, config: {kind: AwsIntegrationConfig, customer_iam_role_arn: "arn:aws:iam::000000000000:role/{{name}}"}, environment: {id: "{{var:env}}"}}
+
+# The setup only: a DRAFT Azure integration, as the Terraform provider's
+# live test makes it (provider in lower case, as v1 reads it back). pim/v2
+# is Early Access in the pinned spec.
+- kind: ProviderIntegrationV2
+  replaceSample: true
+  spec: {display_name: "{{name}}", provider: azure, environment: {id: "{{var:env}}"}}
+  noUpdate: the one updatable field, config, is the authorization; it is taken only while the integration is DRAFT (it then becomes CREATED), so a drift write would be refused, and it names a real Azure tenant or GCP service account
+
+- kind: Plugin
+  replaceSample: true
+  spec: {display_name: "{{name}}", description: first, cloud: AWS, environment: {id: "{{var:env}}"}}
+  change: {description: second}
+  driftFull: true                # a PATCH without environment is refused
+
+- kind: FlinkComputePool
+  replaceSample: true
+  spec: {display_name: "{{name}}", cloud: GCP, region: us-central1, max_cfu: 5, environment: {id: "{{var:env}}"}}
+  change: {display_name: "{{name}}-b"}
+  drift: "{{name}}-c"
+  deleteWait: 5m
+  busyWait: 5m                   # an update is refused (409) until the pool is provisioned
+  driftFull: true                # a PATCH without environment is refused
+
+- kind: KafkaCluster
+  replaceSample: true
+  spec: {display_name: "{{name}}", availability: SINGLE_ZONE, cloud: GCP, region: us-central1, config: {kind: Basic}, environment: {id: "{{var:env}}"}}
+  change: {display_name: "{{name}}-b"}
+  drift: "{{name}}-c"
+  driftFull: true                # a PATCH without environment is refused
+  deleteWait: 10m
+
+- kind: GroupMapping
+  skip: needs SSO enabled on the organization, an organization setting this account must not change
+- kind: IpFilter
+  skip: an IP filter restricts who can reach the organization (the run's own key included); an organization security setting this account must not change
+- kind: FlinkComputePoolConfig
+  skip: the organization's default Flink settings; an organization setting this account must not change
+- kind: KsqlCluster
+  skip: billed (ksqlDB CSUs by the hour)
+- kind: FlinkArtifact
+  skip: needs a Flink UDF JAR uploaded to a presigned URL first
+- kind: ConnectArtifact
+  skip: needs a connector archive uploaded to a presigned URL first
+- kind: CustomConnectorPlugin
+  skip: needs a connector plugin archive uploaded to a presigned URL first
+- kind: CustomConnectorPluginVersion
+  skip: needs a connector plugin archive uploaded to a presigned URL first
+- kind: CatalogIntegration
+  skip: needs a Tableflow-enabled cluster and an AWS Glue or Snowflake catalog
+- kind: TableflowTopic
+  skip: data plane of a Kafka cluster (a topic) with Tableflow storage; billed
+- kind: NotificationsResourceSubscription
+  skip: needs a Kafka cluster, connector or topic to subscribe to (no notification type takes an environment); a cluster per kind is billed and cluster_0 is off limits
+- kind: KafkaClientQuota
+  skip: needs a Dedicated Kafka cluster (client quotas are Dedicated-only); billed by the hour
+- kind: RtceTopic
+  skip: needs a Kafka cluster and a topic in it, made on the cluster's Kafka REST endpoint with a Kafka API key (KLIVE3 - Confluent cluster and Schema Registry API keys), which the run's secret does not hold; a cluster per kind is billed and cluster_0 is off limits
+- kind: ByokKey
+  skip: needs a customer-managed key in an outside AWS, Azure or GCP KMS account; self-managed keys encrypt only Dedicated clusters, billed by the hour
+
+# Private networking: billed by the hour, and most of it needs an outside
+# cloud account (a VPC, a transit gateway, an endpoint) as its other end.
+- kind: Network
+  skip: billed (a Confluent network, for Dedicated clusters, by the hour)
+- kind: Peering
+  skip: needs a Confluent network (billed by the hour) and a VPC or VNet in an outside AWS, Azure or GCP account
+- kind: TransitGatewayAttachment
+  skip: needs a Confluent network (billed by the hour) and an AWS transit gateway shared by RAM from an outside account
+- kind: PrivateLinkAccess
+  skip: needs a Confluent PrivateLink network (billed by the hour) and the outside AWS, Azure or GCP account it grants access to
+- kind: NetworkLinkService
+  skip: needs a Confluent PrivateLink network (billed by the hour), for cluster linking between Dedicated clusters
+- kind: NetworkLinkEndpoint
+  skip: needs two Confluent PrivateLink networks and a network link service (billed by the hour)
+- kind: PrivateLinkAttachment
+  skip: billed (private networking for Enterprise clusters, by the hour)
+- kind: PrivateLinkAttachmentConnection
+  skip: needs a PrivateLink attachment (billed by the hour) and a VPC endpoint in an outside AWS, Azure or GCP account
+- kind: Gateway
+  skip: billed (a private networking gateway, by the hour)
+- kind: AccessPoint
+  skip: needs a gateway (billed by the hour) and an endpoint service in an outside AWS, Azure or GCP account
+- kind: DnsForwarder
+  skip: needs a gateway (billed by the hour) and DNS servers in an outside network
+- kind: DnsRecord
+  skip: needs a gateway and an access point (private networking, billed by the hour)
+
+# Data plane: these call another endpoint with its own API key, and a run
+# has one Connection, to api.confluent.cloud, with the Cloud API key.
+- kind: KafkaClusterConfig
+  skip: data plane (a Dedicated cluster's Kafka REST endpoint, billed by the hour) with a Kafka API key for that cluster (KLIVE3 - Confluent cluster and Schema Registry API keys), which the run's secret does not hold
+- kind: SchemaRegistryClusterConfig
+  skip: &sr data plane (the Schema Registry endpoint) with a Schema Registry API key (KLIVE3 - Confluent cluster and Schema Registry API keys), which the run's secret does not hold
+- kind: SchemaRegistryClusterMode
+  skip: *sr
+- kind: SubjectConfig
+  skip: *sr
+- kind: SubjectMode
+  skip: *sr
+- kind: SchemaRegistryKek
+  skip: *sr
+- kind: SchemaRegistryDek
+  skip: *sr
+- kind: Tag
+  skip: *sr
+- kind: BusinessMetadata
+  skip: *sr
+- kind: TagBinding
+  skip: *sr
+- kind: BusinessMetadataBinding
+  skip: *sr
+- kind: CatalogEntityAttributes
+  skip: *sr
+- kind: FlinkStatement
+  skip: "data plane (the region's Flink endpoint) with a Flink API key for the environment and region, which the run's secret does not hold; a statement also needs a compute pool that runs it"
+- kind: FlinkMaterializedTable
+  skip: "data plane (the region's Flink endpoint) with a Flink API key, which the run's secret does not hold; a materialized table also needs a Kafka cluster and a compute pool"
+- kind: FlinkConnection
+  skip: "data plane (the region's Flink endpoint) with a Flink API key, which the run's secret does not hold; a connection also needs a model provider's credentials"
+- kind: KafkaAcl
+  skip: "data plane (the Kafka cluster's REST endpoint) with a Kafka API key for the cluster, which the run's secret does not hold"
+- kind: KafkaMirrorTopic
+  skip: "data plane (the Kafka cluster's REST endpoint), and a cluster link whose destination is a Dedicated or Enterprise cluster, which bill by the hour"
+- kind: SwitchoverEndpoint
+  skip: "not yet tried: a switchover (failover) needs a primary and a secondary cluster linked to each other, which bill by the hour"
+- kind: SwitchoverPair
+  skip: "not yet tried: a switchover (failover) needs a primary and a secondary cluster linked to each other, which bill by the hour"

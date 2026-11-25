@@ -1,0 +1,90 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/org/v2/environments",
+      "body": "{\"display_name\":\"{{name}}\",\"stream_governance_config\":{\"package\":\"ESSENTIALS\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"org/v2\",\"display_name\":\"{{name}}\",\"id\":270000001,\"kind\":\"Environment\",\"stream_governance_config\":{\"package\":\"ESSENTIALS\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/org/v2/environments/270000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"org/v2\",\"display_name\":\"{{name}}\",\"id\":270000001,\"kind\":\"Environment\",\"stream_governance_config\":{\"package\":\"ESSENTIALS\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/org/v2/environments/270000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"org/v2\",\"display_name\":\"{{name}}\",\"id\":270000001,\"kind\":\"Environment\",\"stream_governance_config\":{\"package\":\"ESSENTIALS\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/org/v2/environments/270000001",
+      "body": "{\"display_name\":\"{{name}}-b\",\"stream_governance_config\":{\"package\":\"ESSENTIALS\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"org/v2\",\"display_name\":\"{{name}}-b\",\"id\":270000001,\"kind\":\"Environment\",\"stream_governance_config\":{\"package\":\"ESSENTIALS\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/org/v2/environments/270000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"org/v2\",\"display_name\":\"{{name}}-b\",\"id\":270000001,\"kind\":\"Environment\",\"stream_governance_config\":{\"package\":\"ESSENTIALS\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/org/v2/environments/270000001",
+      "body": "{\"display_name\":\"{{name}}-c\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"org/v2\",\"display_name\":\"{{name}}-c\",\"id\":270000001,\"kind\":\"Environment\",\"stream_governance_config\":{\"package\":\"ESSENTIALS\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/org/v2/environments/270000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"org/v2\",\"display_name\":\"{{name}}-c\",\"id\":270000001,\"kind\":\"Environment\",\"stream_governance_config\":{\"package\":\"ESSENTIALS\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/org/v2/environments/270000001",
+      "body": "{\"display_name\":\"{{name}}-b\",\"stream_governance_config\":{\"package\":\"ESSENTIALS\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"org/v2\",\"display_name\":\"{{name}}-b\",\"id\":270000001,\"kind\":\"Environment\",\"stream_governance_config\":{\"package\":\"ESSENTIALS\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/org/v2/environments/270000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"org/v2\",\"display_name\":\"{{name}}-b\",\"id\":270000001,\"kind\":\"Environment\",\"stream_governance_config\":{\"package\":\"ESSENTIALS\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/org/v2/environments/270000001",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/org/v2/environments/270000001",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

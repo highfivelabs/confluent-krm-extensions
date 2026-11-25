@@ -1,0 +1,100 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/fcpm/v2/compute-pools",
+      "body": "{\"spec\":{\"cloud\":\"GCP\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"max_cfu\":5,\"region\":\"us-central1\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"GCP\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"id\":270000016,\"max_cfu\":5,\"region\":\"us-central1\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pools/270000016?environment=280000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"GCP\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"id\":270000016,\"max_cfu\":5,\"region\":\"us-central1\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pools/270000016?environment=280000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"GCP\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":280000001},\"id\":270000016,\"max_cfu\":5,\"region\":\"us-central1\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/fcpm/v2/compute-pools/270000016",
+      "body": "{\"spec\":{\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":280000001},\"max_cfu\":5}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"GCP\",\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":280000001},\"id\":270000016,\"max_cfu\":5,\"region\":\"us-central1\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pools/270000016?environment=280000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"GCP\",\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":280000001},\"id\":270000016,\"max_cfu\":5,\"region\":\"us-central1\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pools/270000016?environment=280000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"GCP\",\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":280000001},\"id\":270000016,\"max_cfu\":5,\"region\":\"us-central1\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/fcpm/v2/compute-pools/270000016",
+      "body": "{\"spec\":{\"display_name\":\"{{name}}-c\",\"environment\":{\"id\":280000001},\"id\":270000016,\"max_cfu\":5}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"GCP\",\"display_name\":\"{{name}}-c\",\"environment\":{\"id\":280000001},\"id\":270000016,\"max_cfu\":5,\"region\":\"us-central1\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pools/270000016?environment=280000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"GCP\",\"display_name\":\"{{name}}-c\",\"environment\":{\"id\":280000001},\"id\":270000016,\"max_cfu\":5,\"region\":\"us-central1\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/fcpm/v2/compute-pools/270000016",
+      "body": "{\"spec\":{\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":280000001},\"max_cfu\":5}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"GCP\",\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":280000001},\"id\":270000016,\"max_cfu\":5,\"region\":\"us-central1\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pools/270000016?environment=280000001",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"cloud\":\"GCP\",\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":280000001},\"id\":270000016,\"max_cfu\":5,\"region\":\"us-central1\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/fcpm/v2/compute-pools/270000016?environment=280000001",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pools/270000016?environment=280000001",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

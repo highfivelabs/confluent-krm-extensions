@@ -1,0 +1,234 @@
+{
+  "ApiKey.api.confluent.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-ee33",
+    "date": "2026-11-20T23:56:44Z",
+    "target": "Confluent Cloud trial",
+    "lastPass": "2026-11-20T23:56:44Z"
+  },
+  "CertificateAuthority.certificate.confluent.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-ee33",
+    "date": "2026-11-20T23:56:52Z",
+    "target": "Confluent Cloud trial",
+    "lastPass": "2026-11-20T23:56:52Z"
+  },
+  "CertificatePool.certificate.confluent.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-ee33",
+    "date": "2026-11-20T23:56:55Z",
+    "target": "Confluent Cloud trial",
+    "lastPass": "2026-11-20T23:56:55Z"
+  },
+  "Environment.environment.confluent.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-ee33",
+    "date": "2026-11-20T23:56:38Z",
+    "target": "Confluent Cloud trial",
+    "lastPass": "2026-11-20T23:56:38Z"
+  },
+  "FlinkComputePool.flink.confluent.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-ee33",
+    "date": "2026-11-20T23:57:25Z",
+    "target": "Confluent Cloud trial",
+    "lastPass": "2026-11-20T23:57:25Z"
+  },
+  "IdentityPool.identity.confluent.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-ee33",
+    "date": "2026-11-20T23:56:49Z",
+    "target": "Confluent Cloud trial",
+    "lastPass": "2026-11-20T23:56:49Z"
+  },
+  "IdentityProvider.identity.confluent.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-ee33",
+    "date": "2026-11-20T23:56:47Z",
+    "target": "Confluent Cloud trial",
+    "lastPass": "2026-11-20T23:56:47Z"
+  },
+  "Invitation.invitation.confluent.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-ee33",
+    "date": "2026-11-20T23:56:59Z",
+    "target": "Confluent Cloud trial",
+    "lastPass": "2026-11-20T23:56:59Z"
+  },
+  "IpGroup.ip.confluent.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-ee33",
+    "date": "2026-11-20T23:56:57Z",
+    "target": "Confluent Cloud trial",
+    "lastPass": "2026-11-20T23:56:57Z"
+  },
+  "KafkaCluster.kafka.confluent.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-ee33",
+    "date": "2026-11-20T23:57:29Z",
+    "target": "Confluent Cloud trial",
+    "lastPass": "2026-11-20T23:57:29Z"
+  },
+  "NotificationsIntegration.notifications.confluent.hfl.dev": {
+    "result": "fail",
+    "steps": [
+      "create"
+    ],
+    "reason": "read (right after create: the API should answer what was sent): Ready reason Updated, want [Unchanged]: the API answers target = {\"kind\":\"Webhook\"}, sent {\"kind\":\"Webhook\",\"url\":\"https://example.com/hfl-live\"}",
+    "run": "hfl-live-2611202356-ee33",
+    "date": "2026-11-20T23:57:00Z",
+    "target": "Confluent Cloud trial",
+    "lastPass": "2026-11-17T01:33:31Z"
+  },
+  "NotificationsResourcePreference.notifications.confluent.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-ee33",
+    "date": "2026-11-20T23:57:06Z",
+    "target": "Confluent Cloud trial",
+    "lastPass": "2026-11-20T23:57:06Z"
+  },
+  "NotificationsSubscription.notifications.confluent.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-ee33",
+    "date": "2026-11-20T23:57:04Z",
+    "target": "Confluent Cloud trial",
+    "lastPass": "2026-11-20T23:57:04Z"
+  },
+  "Plugin.plugin.confluent.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-ee33",
+    "date": "2026-11-20T23:57:11Z",
+    "target": "Confluent Cloud trial",
+    "lastPass": "2026-11-20T23:57:11Z"
+  },
+  "ProviderIntegration.provider.confluent.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-ee33",
+    "date": "2026-11-20T23:57:09Z",
+    "target": "Confluent Cloud trial",
+    "lastPass": "2026-11-20T23:57:09Z"
+  },
+  "ServiceAccount.service.confluent.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-ee33",
+    "date": "2026-11-20T23:56:41Z",
+    "target": "Confluent Cloud trial",
+    "lastPass": "2026-11-20T23:56:41Z"
+  }
+}

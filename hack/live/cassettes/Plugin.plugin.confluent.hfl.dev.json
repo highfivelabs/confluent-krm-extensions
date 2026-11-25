@@ -1,0 +1,100 @@
+{
+  "recorded": "2026-11-20T23:57:11Z",
+  "target": "Confluent Cloud trial",
+  "vars": {
+    "ca": "op-Xl6A",
+    "env": "env-qqkyyd",
+    "envcrn": "crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd",
+    "hook": "i-JQlZP",
+    "idp": "op-5AZ3",
+    "sa": "sa-5m3099z"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/ccpm/v1/plugins",
+      "body": "{\"spec\":{\"cloud\":\"AWS\",\"description\":\"first\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\"}}}",
+      "status": 202,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"ccpm/v1\",\"id\":\"ccp-rgggqp\",\"kind\":\"CustomConnectPlugin\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:09.404078Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/custom-connect-plugin=ccp-rgggqp\",\"self\":\"https://confluent.cloud/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd\",\"updated_at\":\"2026-11-20T23:57:09.404078Z\"},\"spec\":{\"cloud\":\"AWS\",\"description\":\"first\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"https://confluent.cloud/org/v3/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"runtime_language\":\"JAVA\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"ccpm/v1\",\"id\":\"ccp-rgggqp\",\"kind\":\"CustomConnectPlugin\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:09.404078Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/custom-connect-plugin=ccp-rgggqp\",\"self\":\"https://confluent.cloud/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd\",\"updated_at\":\"2026-11-20T23:57:09.404078Z\"},\"spec\":{\"cloud\":\"AWS\",\"description\":\"first\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"https://confluent.cloud/org/v3/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"runtime_language\":\"JAVA\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"ccpm/v1\",\"id\":\"ccp-rgggqp\",\"kind\":\"CustomConnectPlugin\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:09.404078Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/custom-connect-plugin=ccp-rgggqp\",\"self\":\"https://confluent.cloud/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd\",\"updated_at\":\"2026-11-20T23:57:09.404078Z\"},\"spec\":{\"cloud\":\"AWS\",\"description\":\"first\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"https://confluent.cloud/org/v3/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"runtime_language\":\"JAVA\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/ccpm/v1/plugins/ccp-rgggqp",
+      "body": "{\"spec\":{\"description\":\"second\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\"}}}",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"ccpm/v1\",\"id\":\"ccp-rgggqp\",\"kind\":\"CustomConnectPlugin\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:09.404078Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/custom-connect-plugin=ccp-rgggqp\",\"self\":\"https://confluent.cloud/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd\",\"updated_at\":\"2026-11-20T23:57:09.964925Z\"},\"spec\":{\"cloud\":\"AWS\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"https://confluent.cloud/org/v3/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"runtime_language\":\"JAVA\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"ccpm/v1\",\"id\":\"ccp-rgggqp\",\"kind\":\"CustomConnectPlugin\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:09.404078Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/custom-connect-plugin=ccp-rgggqp\",\"self\":\"https://confluent.cloud/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd\",\"updated_at\":\"2026-11-20T23:57:09.964925Z\"},\"spec\":{\"cloud\":\"AWS\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"https://confluent.cloud/org/v3/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"runtime_language\":\"JAVA\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"ccpm/v1\",\"id\":\"ccp-rgggqp\",\"kind\":\"CustomConnectPlugin\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:09.404078Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/custom-connect-plugin=ccp-rgggqp\",\"self\":\"https://confluent.cloud/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd\",\"updated_at\":\"2026-11-20T23:57:09.964925Z\"},\"spec\":{\"cloud\":\"AWS\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"https://confluent.cloud/org/v3/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"runtime_language\":\"JAVA\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/ccpm/v1/plugins/ccp-rgggqp",
+      "body": "{\"spec\":{\"description\":\"hfl-live-drift\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"https://confluent.cloud/org/v3/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"runtime_language\":\"JAVA\"}}",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"ccpm/v1\",\"id\":\"ccp-rgggqp\",\"kind\":\"CustomConnectPlugin\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:09.404078Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/custom-connect-plugin=ccp-rgggqp\",\"self\":\"https://confluent.cloud/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd\",\"updated_at\":\"2026-11-20T23:57:10.526716Z\"},\"spec\":{\"cloud\":\"AWS\",\"description\":\"hfl-live-drift\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"https://confluent.cloud/org/v3/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"runtime_language\":\"JAVA\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"ccpm/v1\",\"id\":\"ccp-rgggqp\",\"kind\":\"CustomConnectPlugin\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:09.404078Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/custom-connect-plugin=ccp-rgggqp\",\"self\":\"https://confluent.cloud/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd\",\"updated_at\":\"2026-11-20T23:57:10.526716Z\"},\"spec\":{\"cloud\":\"AWS\",\"description\":\"hfl-live-drift\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"https://confluent.cloud/org/v3/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"runtime_language\":\"JAVA\"}}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/ccpm/v1/plugins/ccp-rgggqp",
+      "body": "{\"spec\":{\"description\":\"second\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\"}}}",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"ccpm/v1\",\"id\":\"ccp-rgggqp\",\"kind\":\"CustomConnectPlugin\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:09.404078Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/custom-connect-plugin=ccp-rgggqp\",\"self\":\"https://confluent.cloud/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd\",\"updated_at\":\"2026-11-20T23:57:10.896223Z\"},\"spec\":{\"cloud\":\"AWS\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"https://confluent.cloud/org/v3/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"runtime_language\":\"JAVA\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"api_version\":\"ccpm/v1\",\"id\":\"ccp-rgggqp\",\"kind\":\"CustomConnectPlugin\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:09.404078Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/custom-connect-plugin=ccp-rgggqp\",\"self\":\"https://confluent.cloud/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd\",\"updated_at\":\"2026-11-20T23:57:10.896223Z\"},\"spec\":{\"cloud\":\"AWS\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"https://confluent.cloud/org/v3/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"runtime_language\":\"JAVA\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/ccpm/v1/plugins/ccp-rgggqp?environment=env-qqkyyd",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\n  \"errors\": [\n    {\n      \"id\": \"ff17b56692bdf55a635163b289ea4a45\",\n      \"status\": \"404\",\n      \"detail\": \"Not Found\",\n      \"source\": {}\n    }\n  ]\n}"
+    }
+  ]
+}

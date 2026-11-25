@@ -1,0 +1,100 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/config",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/config",
+      "body": "{\"alias\":\"example-alias\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"example-alias\",\"compatibilityLevel\":\"FULL_TRANSITIVE\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"example-alias\",\"compatibilityLevel\":\"FULL_TRANSITIVE\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"example-alias\",\"compatibilityLevel\":\"FULL_TRANSITIVE\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/config",
+      "body": "{\"alias\":\"changed-alias\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"changed-alias\",\"compatibilityLevel\":\"FULL_TRANSITIVE\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"changed-alias\",\"compatibilityLevel\":\"FULL_TRANSITIVE\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/config",
+      "body": "{\"alias\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"hfl-live-drift\",\"compatibilityLevel\":\"FULL_TRANSITIVE\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"hfl-live-drift\",\"compatibilityLevel\":\"FULL_TRANSITIVE\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/config",
+      "body": "{\"alias\":\"changed-alias\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"changed-alias\",\"compatibilityLevel\":\"FULL_TRANSITIVE\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"changed-alias\",\"compatibilityLevel\":\"FULL_TRANSITIVE\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/config",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/config",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

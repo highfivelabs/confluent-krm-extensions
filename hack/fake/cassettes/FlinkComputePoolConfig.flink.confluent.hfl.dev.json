@@ -1,0 +1,43 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pool-config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pool-config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/fcpm/v2/compute-pool-config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/fcpm/v2/compute-pool-config",
+      "body": "{\"spec\":{}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{}}\n"
+    }
+  ]
+}

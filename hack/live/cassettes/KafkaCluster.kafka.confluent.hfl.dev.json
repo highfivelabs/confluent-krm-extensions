@@ -1,0 +1,100 @@
+{
+  "recorded": "2026-11-20T23:57:29Z",
+  "target": "Confluent Cloud trial",
+  "vars": {
+    "ca": "op-Xl6A",
+    "env": "env-qqkyyd",
+    "envcrn": "crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd",
+    "hook": "i-JQlZP",
+    "idp": "op-5AZ3",
+    "sa": "sa-5m3099z"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/cmk/v2/clusters",
+      "body": "{\"spec\":{\"availability\":\"SINGLE_ZONE\",\"cloud\":\"GCP\",\"config\":{\"kind\":\"Basic\"},\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\"},\"region\":\"us-central1\"}}",
+      "status": 202,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"cmk/v2\",\"id\":\"lkc-zmwxk7z\",\"kind\":\"Cluster\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:25.669373Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/cloud-cluster=lkc-zmwxk7z/kafka=lkc-zmwxk7z\",\"self\":\"{{baseURL}}/cmk/v2/clusters/lkc-zmwxk7z\",\"updated_at\":\"2026-11-20T23:57:25.669373Z\"},\"spec\":{\"api_endpoint\":\"\",\"availability\":\"SINGLE_ZONE\",\"cloud\":\"GCP\",\"config\":{\"kind\":\"Basic\",\"max_ecku\":50},\"deletion_protection\":false,\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"{{baseURL}}/org/v2/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"http_endpoint\":\"https://pkc-n3603.us-central1.gcp.confluent.cloud:443\",\"kafka_bootstrap_endpoint\":\"SASL_SSL://pkc-n3603.us-central1.gcp.confluent.cloud:9092\",\"region\":\"us-central1\"},\"status\":{\"phase\":\"PROVISIONING\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/cmk/v2/clusters/lkc-zmwxk7z?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"cmk/v2\",\"id\":\"lkc-zmwxk7z\",\"kind\":\"Cluster\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:25.669373Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/cloud-cluster=lkc-zmwxk7z/kafka=lkc-zmwxk7z\",\"self\":\"{{baseURL}}/cmk/v2/clusters/lkc-zmwxk7z\",\"updated_at\":\"2026-11-20T23:57:25.669373Z\"},\"spec\":{\"api_endpoint\":\"\",\"availability\":\"SINGLE_ZONE\",\"cloud\":\"GCP\",\"config\":{\"kind\":\"Basic\",\"max_ecku\":50},\"deletion_protection\":false,\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"{{baseURL}}/org/v2/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"http_endpoint\":\"https://pkc-n3603.us-central1.gcp.confluent.cloud:443\",\"kafka_bootstrap_endpoint\":\"SASL_SSL://pkc-n3603.us-central1.gcp.confluent.cloud:9092\",\"region\":\"us-central1\"},\"status\":{\"phase\":\"PROVISIONED\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/cmk/v2/clusters/lkc-zmwxk7z?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"cmk/v2\",\"id\":\"lkc-zmwxk7z\",\"kind\":\"Cluster\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:25.669373Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/cloud-cluster=lkc-zmwxk7z/kafka=lkc-zmwxk7z\",\"self\":\"{{baseURL}}/cmk/v2/clusters/lkc-zmwxk7z\",\"updated_at\":\"2026-11-20T23:57:25.669373Z\"},\"spec\":{\"api_endpoint\":\"\",\"availability\":\"SINGLE_ZONE\",\"cloud\":\"GCP\",\"config\":{\"kind\":\"Basic\",\"max_ecku\":50},\"deletion_protection\":false,\"display_name\":\"{{name}}\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"{{baseURL}}/org/v2/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"http_endpoint\":\"https://pkc-n3603.us-central1.gcp.confluent.cloud:443\",\"kafka_bootstrap_endpoint\":\"SASL_SSL://pkc-n3603.us-central1.gcp.confluent.cloud:9092\",\"region\":\"us-central1\"},\"status\":{\"phase\":\"PROVISIONED\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/cmk/v2/clusters/lkc-zmwxk7z",
+      "body": "{\"spec\":{\"availability\":\"SINGLE_ZONE\",\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":\"env-qqkyyd\"}}}",
+      "status": 202,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"cmk/v2\",\"id\":\"lkc-zmwxk7z\",\"kind\":\"Cluster\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:25.669373Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/cloud-cluster=lkc-zmwxk7z/kafka=lkc-zmwxk7z\",\"self\":\"{{baseURL}}/cmk/v2/clusters/lkc-zmwxk7z\",\"updated_at\":\"2026-11-20T23:57:26.675694Z\"},\"spec\":{\"api_endpoint\":\"\",\"availability\":\"SINGLE_ZONE\",\"cloud\":\"GCP\",\"config\":{\"kind\":\"Basic\",\"max_ecku\":50},\"deletion_protection\":false,\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"{{baseURL}}/org/v2/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"http_endpoint\":\"https://pkc-n3603.us-central1.gcp.confluent.cloud:443\",\"kafka_bootstrap_endpoint\":\"SASL_SSL://pkc-n3603.us-central1.gcp.confluent.cloud:9092\",\"region\":\"us-central1\"},\"status\":{\"phase\":\"PROVISIONED\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/cmk/v2/clusters/lkc-zmwxk7z?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"cmk/v2\",\"id\":\"lkc-zmwxk7z\",\"kind\":\"Cluster\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:25.669373Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/cloud-cluster=lkc-zmwxk7z/kafka=lkc-zmwxk7z\",\"self\":\"{{baseURL}}/cmk/v2/clusters/lkc-zmwxk7z\",\"updated_at\":\"2026-11-20T23:57:26.675694Z\"},\"spec\":{\"api_endpoint\":\"\",\"availability\":\"SINGLE_ZONE\",\"cloud\":\"GCP\",\"config\":{\"kind\":\"Basic\",\"max_ecku\":50},\"deletion_protection\":false,\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"{{baseURL}}/org/v2/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"http_endpoint\":\"https://pkc-n3603.us-central1.gcp.confluent.cloud:443\",\"kafka_bootstrap_endpoint\":\"SASL_SSL://pkc-n3603.us-central1.gcp.confluent.cloud:9092\",\"region\":\"us-central1\"},\"status\":{\"phase\":\"PROVISIONED\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/cmk/v2/clusters/lkc-zmwxk7z?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"cmk/v2\",\"id\":\"lkc-zmwxk7z\",\"kind\":\"Cluster\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:25.669373Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/cloud-cluster=lkc-zmwxk7z/kafka=lkc-zmwxk7z\",\"self\":\"{{baseURL}}/cmk/v2/clusters/lkc-zmwxk7z\",\"updated_at\":\"2026-11-20T23:57:26.675694Z\"},\"spec\":{\"api_endpoint\":\"\",\"availability\":\"SINGLE_ZONE\",\"cloud\":\"GCP\",\"config\":{\"kind\":\"Basic\",\"max_ecku\":50},\"deletion_protection\":false,\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"{{baseURL}}/org/v2/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"http_endpoint\":\"https://pkc-n3603.us-central1.gcp.confluent.cloud:443\",\"kafka_bootstrap_endpoint\":\"SASL_SSL://pkc-n3603.us-central1.gcp.confluent.cloud:9092\",\"region\":\"us-central1\"},\"status\":{\"phase\":\"PROVISIONED\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/cmk/v2/clusters/lkc-zmwxk7z",
+      "body": "{\"spec\":{\"api_endpoint\":\"\",\"availability\":\"SINGLE_ZONE\",\"deletion_protection\":false,\"display_name\":\"{{name}}-c\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"{{baseURL}}/org/v2/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"http_endpoint\":\"https://pkc-n3603.us-central1.gcp.confluent.cloud:443\",\"kafka_bootstrap_endpoint\":\"SASL_SSL://pkc-n3603.us-central1.gcp.confluent.cloud:9092\"}}",
+      "status": 202,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"cmk/v2\",\"id\":\"lkc-zmwxk7z\",\"kind\":\"Cluster\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:25.669373Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/cloud-cluster=lkc-zmwxk7z/kafka=lkc-zmwxk7z\",\"self\":\"{{baseURL}}/cmk/v2/clusters/lkc-zmwxk7z\",\"updated_at\":\"2026-11-20T23:57:27.732841Z\"},\"spec\":{\"api_endpoint\":\"\",\"availability\":\"SINGLE_ZONE\",\"cloud\":\"GCP\",\"config\":{\"kind\":\"Basic\",\"max_ecku\":50},\"deletion_protection\":false,\"display_name\":\"{{name}}-c\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"{{baseURL}}/org/v2/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"http_endpoint\":\"https://pkc-n3603.us-central1.gcp.confluent.cloud:443\",\"kafka_bootstrap_endpoint\":\"SASL_SSL://pkc-n3603.us-central1.gcp.confluent.cloud:9092\",\"region\":\"us-central1\"},\"status\":{\"phase\":\"PROVISIONED\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/cmk/v2/clusters/lkc-zmwxk7z?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"cmk/v2\",\"id\":\"lkc-zmwxk7z\",\"kind\":\"Cluster\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:25.669373Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/cloud-cluster=lkc-zmwxk7z/kafka=lkc-zmwxk7z\",\"self\":\"{{baseURL}}/cmk/v2/clusters/lkc-zmwxk7z\",\"updated_at\":\"2026-11-20T23:57:27.732841Z\"},\"spec\":{\"api_endpoint\":\"\",\"availability\":\"SINGLE_ZONE\",\"cloud\":\"GCP\",\"config\":{\"kind\":\"Basic\",\"max_ecku\":50},\"deletion_protection\":false,\"display_name\":\"{{name}}-c\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"{{baseURL}}/org/v2/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"http_endpoint\":\"https://pkc-n3603.us-central1.gcp.confluent.cloud:443\",\"kafka_bootstrap_endpoint\":\"SASL_SSL://pkc-n3603.us-central1.gcp.confluent.cloud:9092\",\"region\":\"us-central1\"},\"status\":{\"phase\":\"PROVISIONED\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/cmk/v2/clusters/lkc-zmwxk7z",
+      "body": "{\"spec\":{\"availability\":\"SINGLE_ZONE\",\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":\"env-qqkyyd\"}}}",
+      "status": 202,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"cmk/v2\",\"id\":\"lkc-zmwxk7z\",\"kind\":\"Cluster\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:25.669373Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/cloud-cluster=lkc-zmwxk7z/kafka=lkc-zmwxk7z\",\"self\":\"{{baseURL}}/cmk/v2/clusters/lkc-zmwxk7z\",\"updated_at\":\"2026-11-20T23:57:28.366408Z\"},\"spec\":{\"api_endpoint\":\"\",\"availability\":\"SINGLE_ZONE\",\"cloud\":\"GCP\",\"config\":{\"kind\":\"Basic\",\"max_ecku\":50},\"deletion_protection\":false,\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"{{baseURL}}/org/v2/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"http_endpoint\":\"https://pkc-n3603.us-central1.gcp.confluent.cloud:443\",\"kafka_bootstrap_endpoint\":\"SASL_SSL://pkc-n3603.us-central1.gcp.confluent.cloud:9092\",\"region\":\"us-central1\"},\"status\":{\"phase\":\"PROVISIONED\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/cmk/v2/clusters/lkc-zmwxk7z?environment=env-qqkyyd",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"cmk/v2\",\"id\":\"lkc-zmwxk7z\",\"kind\":\"Cluster\",\"metadata\":{\"created_at\":\"2026-11-20T23:57:25.669373Z\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd/cloud-cluster=lkc-zmwxk7z/kafka=lkc-zmwxk7z\",\"self\":\"{{baseURL}}/cmk/v2/clusters/lkc-zmwxk7z\",\"updated_at\":\"2026-11-20T23:57:28.366408Z\"},\"spec\":{\"api_endpoint\":\"\",\"availability\":\"SINGLE_ZONE\",\"cloud\":\"GCP\",\"config\":{\"kind\":\"Basic\",\"max_ecku\":50},\"deletion_protection\":false,\"display_name\":\"{{name}}-b\",\"environment\":{\"id\":\"env-qqkyyd\",\"related\":\"{{baseURL}}/org/v2/environments/env-qqkyyd\",\"resource_name\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\"},\"http_endpoint\":\"https://pkc-n3603.us-central1.gcp.confluent.cloud:443\",\"kafka_bootstrap_endpoint\":\"SASL_SSL://pkc-n3603.us-central1.gcp.confluent.cloud:9092\",\"region\":\"us-central1\"},\"status\":{\"phase\":\"PROVISIONED\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/cmk/v2/clusters/lkc-zmwxk7z?environment=env-qqkyyd",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/cmk/v2/clusters/lkc-zmwxk7z?environment=env-qqkyyd",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\n  \"errors\": [\n    {\n      \"id\": \"4c3f7c5981da2e1607a43085304026d7\",\n      \"status\": \"404\",\n      \"code\": \"resource_not_found\",\n      \"detail\": \"Resource Not Found\",\n      \"source\": {}\n    }\n  ]\n}"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "recorded": "2026-11-20T23:57:04Z",
+  "target": "Confluent Cloud trial",
+  "vars": {
+    "ca": "op-Xl6A",
+    "env": "env-qqkyyd",
+    "envcrn": "crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd",
+    "hook": "i-JQlZP",
+    "idp": "op-5AZ3",
+    "sa": "sa-5m3099z"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/notifications/v1/integrations",
+      "body": "{\"display_name\":\"{{name}}\",\"target\":{\"kind\":\"Webhook\",\"url\":\"https://example.com/hfl-live\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"Integration\",\"id\":\"i-JQlZP\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/integrations/i-JQlZP\",\"resource_name\":\"crn://confluent.cloud/integration=i-JQlZP\",\"created_at\":\"2026-11-20T23:57:01.008Z\",\"updated_at\":\"2026-11-20T23:57:01.008Z\"},\"display_name\":\"{{name}}\",\"target\":{\"kind\":\"Webhook\"}}"
+    },
+    {
+      "method": "POST",
+      "path": "/notifications/v1/subscriptions",
+      "body": "{\"current_state\":\"ENABLED\",\"integrations\":[{\"id\":\"i-JQlZP\"}],\"notification_type\":{\"id\":\"nt-p55Ap\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"Subscription\",\"id\":\"s-0XKbqq\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/subscriptions/s-0XKbqq\",\"resource_name\":\"crn://confluent.cloud/subscription=s-0XKbqq\",\"created_at\":\"2026-11-20T23:57:01.376Z\",\"updated_at\":\"2026-11-20T23:57:01.376Z\"},\"notification_type\":{\"id\":\"nt-p55Ap\",\"kind\":\"notification-type\",\"related\":\"{{baseURL}}/notifications/v1/notification-types/nt-p55Ap\",\"resource_name\":\"crn://confluent.cloud/notification-type=nt-p55Ap\",\"api_version\":\"notifications/v1\"},\"integrations\":[{\"id\":\"i-JQlZP\",\"kind\":\"integration\",\"related\":\"{{baseURL}}/notifications/v1/integrations/i-JQlZP\",\"resource_name\":\"crn://confluent.cloud/integration=i-JQlZP\",\"api_version\":\"notifications/v1\"}],\"current_state\":\"ENABLED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/subscriptions/s-0XKbqq",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"Subscription\",\"id\":\"s-0XKbqq\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/subscriptions/s-0XKbqq\",\"resource_name\":\"crn://confluent.cloud/subscription=s-0XKbqq\",\"created_at\":\"2026-11-20T23:57:01.376Z\",\"updated_at\":\"2026-11-20T23:57:01.376Z\"},\"notification_type\":{\"id\":\"nt-p55Ap\",\"kind\":\"notification-type\",\"related\":\"{{baseURL}}/notifications/v1/notification-types/nt-p55Ap\",\"resource_name\":\"crn://confluent.cloud/notification-type=nt-p55Ap\",\"api_version\":\"notifications/v1\"},\"integrations\":[{\"id\":\"i-JQlZP\",\"kind\":\"integration\",\"related\":\"{{baseURL}}/notifications/v1/integrations/i-JQlZP\",\"resource_name\":\"crn://confluent.cloud/integration=i-JQlZP\",\"api_version\":\"notifications/v1\"}],\"current_state\":\"ENABLED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/subscriptions/s-0XKbqq",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"Subscription\",\"id\":\"s-0XKbqq\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/subscriptions/s-0XKbqq\",\"resource_name\":\"crn://confluent.cloud/subscription=s-0XKbqq\",\"created_at\":\"2026-11-20T23:57:01.376Z\",\"updated_at\":\"2026-11-20T23:57:01.376Z\"},\"notification_type\":{\"id\":\"nt-p55Ap\",\"kind\":\"notification-type\",\"related\":\"{{baseURL}}/notifications/v1/notification-types/nt-p55Ap\",\"resource_name\":\"crn://confluent.cloud/notification-type=nt-p55Ap\",\"api_version\":\"notifications/v1\"},\"integrations\":[{\"id\":\"i-JQlZP\",\"kind\":\"integration\",\"related\":\"{{baseURL}}/notifications/v1/integrations/i-JQlZP\",\"resource_name\":\"crn://confluent.cloud/integration=i-JQlZP\",\"api_version\":\"notifications/v1\"}],\"current_state\":\"ENABLED\"}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/subscriptions/s-0XKbqq",
+      "body": "{\"current_state\":\"DISABLED\",\"integrations\":[{\"id\":\"i-JQlZP\"}]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"Subscription\",\"id\":\"s-0XKbqq\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/subscriptions/s-0XKbqq\",\"resource_name\":\"crn://confluent.cloud/subscription=s-0XKbqq\",\"created_at\":\"2026-11-20T23:57:01.376Z\",\"updated_at\":\"2026-11-20T23:57:02.576Z\"},\"notification_type\":{\"id\":\"nt-p55Ap\",\"kind\":\"notification-type\",\"related\":\"{{baseURL}}/notifications/v1/notification-types/nt-p55Ap\",\"resource_name\":\"crn://confluent.cloud/notification-type=nt-p55Ap\",\"api_version\":\"notifications/v1\"},\"integrations\":[{\"id\":\"i-JQlZP\",\"kind\":\"integration\",\"related\":\"{{baseURL}}/notifications/v1/integrations/i-JQlZP\",\"resource_name\":\"crn://confluent.cloud/integration=i-JQlZP\",\"api_version\":\"notifications/v1\"}],\"current_state\":\"DISABLED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/subscriptions/s-0XKbqq",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"Subscription\",\"id\":\"s-0XKbqq\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/subscriptions/s-0XKbqq\",\"resource_name\":\"crn://confluent.cloud/subscription=s-0XKbqq\",\"created_at\":\"2026-11-20T23:57:01.376Z\",\"updated_at\":\"2026-11-20T23:57:02.576Z\"},\"notification_type\":{\"id\":\"nt-p55Ap\",\"kind\":\"notification-type\",\"related\":\"{{baseURL}}/notifications/v1/notification-types/nt-p55Ap\",\"resource_name\":\"crn://confluent.cloud/notification-type=nt-p55Ap\",\"api_version\":\"notifications/v1\"},\"integrations\":[{\"id\":\"i-JQlZP\",\"kind\":\"integration\",\"related\":\"{{baseURL}}/notifications/v1/integrations/i-JQlZP\",\"resource_name\":\"crn://confluent.cloud/integration=i-JQlZP\",\"api_version\":\"notifications/v1\"}],\"current_state\":\"DISABLED\"}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/subscriptions/s-0XKbqq",
+      "body": "{\"current_state\":\"ENABLED\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"Subscription\",\"id\":\"s-0XKbqq\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/subscriptions/s-0XKbqq\",\"resource_name\":\"crn://confluent.cloud/subscription=s-0XKbqq\",\"created_at\":\"2026-11-20T23:57:01.376Z\",\"updated_at\":\"2026-11-20T23:57:03.229Z\"},\"notification_type\":{\"id\":\"nt-p55Ap\",\"kind\":\"notification-type\",\"related\":\"{{baseURL}}/notifications/v1/notification-types/nt-p55Ap\",\"resource_name\":\"crn://confluent.cloud/notification-type=nt-p55Ap\",\"api_version\":\"notifications/v1\"},\"integrations\":[{\"id\":\"i-JQlZP\",\"kind\":\"integration\",\"related\":\"{{baseURL}}/notifications/v1/integrations/i-JQlZP\",\"resource_name\":\"crn://confluent.cloud/integration=i-JQlZP\",\"api_version\":\"notifications/v1\"}],\"current_state\":\"ENABLED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/subscriptions/s-0XKbqq",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"Subscription\",\"id\":\"s-0XKbqq\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/subscriptions/s-0XKbqq\",\"resource_name\":\"crn://confluent.cloud/subscription=s-0XKbqq\",\"created_at\":\"2026-11-20T23:57:01.376Z\",\"updated_at\":\"2026-11-20T23:57:03.229Z\"},\"notification_type\":{\"id\":\"nt-p55Ap\",\"kind\":\"notification-type\",\"related\":\"{{baseURL}}/notifications/v1/notification-types/nt-p55Ap\",\"resource_name\":\"crn://confluent.cloud/notification-type=nt-p55Ap\",\"api_version\":\"notifications/v1\"},\"integrations\":[{\"id\":\"i-JQlZP\",\"kind\":\"integration\",\"related\":\"{{baseURL}}/notifications/v1/integrations/i-JQlZP\",\"resource_name\":\"crn://confluent.cloud/integration=i-JQlZP\",\"api_version\":\"notifications/v1\"}],\"current_state\":\"ENABLED\"}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/subscriptions/s-0XKbqq",
+      "body": "{\"current_state\":\"DISABLED\",\"integrations\":[{\"id\":\"i-JQlZP\"}]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"Subscription\",\"id\":\"s-0XKbqq\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/subscriptions/s-0XKbqq\",\"resource_name\":\"crn://confluent.cloud/subscription=s-0XKbqq\",\"created_at\":\"2026-11-20T23:57:01.376Z\",\"updated_at\":\"2026-11-20T23:57:03.817Z\"},\"notification_type\":{\"id\":\"nt-p55Ap\",\"kind\":\"notification-type\",\"related\":\"{{baseURL}}/notifications/v1/notification-types/nt-p55Ap\",\"resource_name\":\"crn://confluent.cloud/notification-type=nt-p55Ap\",\"api_version\":\"notifications/v1\"},\"integrations\":[{\"id\":\"i-JQlZP\",\"kind\":\"integration\",\"related\":\"{{baseURL}}/notifications/v1/integrations/i-JQlZP\",\"resource_name\":\"crn://confluent.cloud/integration=i-JQlZP\",\"api_version\":\"notifications/v1\"}],\"current_state\":\"DISABLED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/subscriptions/s-0XKbqq",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"Subscription\",\"id\":\"s-0XKbqq\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/subscriptions/s-0XKbqq\",\"resource_name\":\"crn://confluent.cloud/subscription=s-0XKbqq\",\"created_at\":\"2026-11-20T23:57:01.376Z\",\"updated_at\":\"2026-11-20T23:57:03.817Z\"},\"notification_type\":{\"id\":\"nt-p55Ap\",\"kind\":\"notification-type\",\"related\":\"{{baseURL}}/notifications/v1/notification-types/nt-p55Ap\",\"resource_name\":\"crn://confluent.cloud/notification-type=nt-p55Ap\",\"api_version\":\"notifications/v1\"},\"integrations\":[{\"id\":\"i-JQlZP\",\"kind\":\"integration\",\"related\":\"{{baseURL}}/notifications/v1/integrations/i-JQlZP\",\"resource_name\":\"crn://confluent.cloud/integration=i-JQlZP\",\"api_version\":\"notifications/v1\"}],\"current_state\":\"DISABLED\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/notifications/v1/subscriptions/s-0XKbqq",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/subscriptions/s-0XKbqq",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errors\":[{\"id\":\"78046ce0-ccc6-4740-99ef-1526f5574e31\",\"status\":\"404\",\"code\":\"1100\",\"title\":\"ID Not Found\",\"detail\":\"Subscription with id=s-0XKbqq is not found\"}]}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/notifications/v1/integrations/i-JQlZP",
+      "status": 204
+    }
+  ]
+}

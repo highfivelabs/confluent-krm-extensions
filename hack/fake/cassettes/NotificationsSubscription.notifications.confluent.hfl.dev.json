@@ -1,0 +1,106 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/notifications/v1/integrations",
+      "body": "{\"display_name\":\"{{name}}\",\"target\":{\"kind\":\"Webhook\",\"url\":\"https://example.com/hfl-live\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"display_name\":\"{{name}}\",\"id\":280000005,\"target\":{\"kind\":\"Webhook\",\"url\":\"https://example.com/hfl-live\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/notifications/v1/subscriptions",
+      "body": "{\"current_state\":\"ENABLED\",\"integrations\":[{\"id\":280000005}],\"notification_type\":{\"id\":\"nt-p55Ap\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"ENABLED\",\"id\":270000011,\"integrations\":[{\"id\":280000005}],\"kind\":\"Subscription\",\"notification_type\":{\"id\":\"nt-p55Ap\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/subscriptions/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"ENABLED\",\"id\":270000011,\"integrations\":[{\"id\":280000005}],\"kind\":\"Subscription\",\"notification_type\":{\"id\":\"nt-p55Ap\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/subscriptions/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"ENABLED\",\"id\":270000011,\"integrations\":[{\"id\":280000005}],\"kind\":\"Subscription\",\"notification_type\":{\"id\":\"nt-p55Ap\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/subscriptions/270000011",
+      "body": "{\"current_state\":\"DISABLED\",\"integrations\":[{\"id\":280000005}]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"DISABLED\",\"id\":270000011,\"integrations\":[{\"id\":280000005}],\"kind\":\"Subscription\",\"notification_type\":{\"id\":\"nt-p55Ap\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/subscriptions/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"DISABLED\",\"id\":270000011,\"integrations\":[{\"id\":280000005}],\"kind\":\"Subscription\",\"notification_type\":{\"id\":\"nt-p55Ap\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/subscriptions/270000011",
+      "body": "{\"current_state\":\"ENABLED\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"ENABLED\",\"id\":270000011,\"integrations\":[{\"id\":280000005}],\"kind\":\"Subscription\",\"notification_type\":{\"id\":\"nt-p55Ap\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/subscriptions/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"ENABLED\",\"id\":270000011,\"integrations\":[{\"id\":280000005}],\"kind\":\"Subscription\",\"notification_type\":{\"id\":\"nt-p55Ap\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/subscriptions/270000011",
+      "body": "{\"current_state\":\"DISABLED\",\"integrations\":[{\"id\":280000005}]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"DISABLED\",\"id\":270000011,\"integrations\":[{\"id\":280000005}],\"kind\":\"Subscription\",\"notification_type\":{\"id\":\"nt-p55Ap\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/subscriptions/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"current_state\":\"DISABLED\",\"id\":270000011,\"integrations\":[{\"id\":280000005}],\"kind\":\"Subscription\",\"notification_type\":{\"id\":\"nt-p55Ap\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/notifications/v1/subscriptions/270000011",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/subscriptions/270000011",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/notifications/v1/integrations/280000005",
+      "status": 204
+    }
+  ]
+}

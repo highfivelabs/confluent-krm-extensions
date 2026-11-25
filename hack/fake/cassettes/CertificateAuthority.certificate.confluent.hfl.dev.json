@@ -1,0 +1,91 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/iam/v2/certificate-authorities",
+      "body": "{\"certificate_chain\":\"-----BEGIN CERTIFICATE-----\\nMIIBxjCCAWygAwIBAgIUf+QQw/JBebC8BgKxjx2b6MkeOZ4wCgYIKoZIzj0EAwIw\\nQTELMAkGA1UEBhMCVVMxFzAVBgNVBAoMDkhpZ2ggRml2ZSBMYWJzMRkwFwYDVQQD\\nDBBoZmwtbGl2ZSB0ZXN0IENBMB4XDTI2MTExNjA3Mzg1NVoXDTM2MTExMzA3Mzg1\\nNVowQTELMAkGA1UEBhMCVVMxFzAVBgNVBAoMDkhpZ2ggRml2ZSBMYWJzMRkwFwYD\\nVQQDDBBoZmwtbGl2ZSB0ZXN0IENBMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE\\njxqr5Iw1ELSXBgGmbHTgNH/Adela1s10mRsejoBW/qQaP29KAoyF1Dqo2qISACP1\\nVx5KsPmqlUfvTdG0K2cLeqNCMEAwHQYDVR0OBBYEFPH56j/u7PgKFBQjQ2INRDpX\\nQVPoMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgEGMAoGCCqGSM49BAMC\\nA0gAMEUCIEtJknZVF2xkliCuXpTE7ZFwVcXvxySPD0OiGUOJWLF4AiEA1nUgf+o0\\n7mRU/rDVz/fD0qv8Ij07Q0pSPBbbnl5jlpc=\\n-----END CERTIFICATE-----\\n\",\"certificate_chain_filename\":\"hfl-live-ca.pem\",\"description\":\"first\",\"display_name\":\"{{name}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"certificate_chain_filename\":\"hfl-live-ca.pem\",\"crl_source\":\"LOCAL\",\"crl_updated_at\":\"2017-07-21T17:32:28Z\",\"description\":\"first\",\"display_name\":\"{{name}}\",\"expiration_dates\":[],\"fingerprints\":[],\"id\":270000006,\"kind\":\"CertificateAuthority\",\"serial_numbers\":[],\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/certificate-authorities/270000006",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"certificate_chain_filename\":\"hfl-live-ca.pem\",\"crl_source\":\"LOCAL\",\"crl_updated_at\":\"2017-07-21T17:32:28Z\",\"description\":\"first\",\"display_name\":\"{{name}}\",\"expiration_dates\":[],\"fingerprints\":[],\"id\":270000006,\"kind\":\"CertificateAuthority\",\"serial_numbers\":[],\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/certificate-authorities/270000006",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"certificate_chain_filename\":\"hfl-live-ca.pem\",\"crl_source\":\"LOCAL\",\"crl_updated_at\":\"2017-07-21T17:32:28Z\",\"description\":\"first\",\"display_name\":\"{{name}}\",\"expiration_dates\":[],\"fingerprints\":[],\"id\":270000006,\"kind\":\"CertificateAuthority\",\"serial_numbers\":[],\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/iam/v2/certificate-authorities/270000006",
+      "body": "{\"certificate_chain\":\"-----BEGIN CERTIFICATE-----\\nMIIBxjCCAWygAwIBAgIUf+QQw/JBebC8BgKxjx2b6MkeOZ4wCgYIKoZIzj0EAwIw\\nQTELMAkGA1UEBhMCVVMxFzAVBgNVBAoMDkhpZ2ggRml2ZSBMYWJzMRkwFwYDVQQD\\nDBBoZmwtbGl2ZSB0ZXN0IENBMB4XDTI2MTExNjA3Mzg1NVoXDTM2MTExMzA3Mzg1\\nNVowQTELMAkGA1UEBhMCVVMxFzAVBgNVBAoMDkhpZ2ggRml2ZSBMYWJzMRkwFwYD\\nVQQDDBBoZmwtbGl2ZSB0ZXN0IENBMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE\\njxqr5Iw1ELSXBgGmbHTgNH/Adela1s10mRsejoBW/qQaP29KAoyF1Dqo2qISACP1\\nVx5KsPmqlUfvTdG0K2cLeqNCMEAwHQYDVR0OBBYEFPH56j/u7PgKFBQjQ2INRDpX\\nQVPoMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgEGMAoGCCqGSM49BAMC\\nA0gAMEUCIEtJknZVF2xkliCuXpTE7ZFwVcXvxySPD0OiGUOJWLF4AiEA1nUgf+o0\\n7mRU/rDVz/fD0qv8Ij07Q0pSPBbbnl5jlpc=\\n-----END CERTIFICATE-----\\n\",\"certificate_chain_filename\":\"hfl-live-ca.pem\",\"description\":\"second\",\"display_name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"certificate_chain_filename\":\"hfl-live-ca.pem\",\"crl_source\":\"LOCAL\",\"crl_updated_at\":\"2017-07-21T17:32:28Z\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"expiration_dates\":[],\"fingerprints\":[],\"id\":270000006,\"kind\":\"CertificateAuthority\",\"serial_numbers\":[],\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/certificate-authorities/270000006",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"certificate_chain_filename\":\"hfl-live-ca.pem\",\"crl_source\":\"LOCAL\",\"crl_updated_at\":\"2017-07-21T17:32:28Z\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"expiration_dates\":[],\"fingerprints\":[],\"id\":270000006,\"kind\":\"CertificateAuthority\",\"serial_numbers\":[],\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/iam/v2/certificate-authorities/270000006",
+      "body": "{\"description\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"certificate_chain_filename\":\"hfl-live-ca.pem\",\"crl_source\":\"LOCAL\",\"crl_updated_at\":\"2017-07-21T17:32:28Z\",\"description\":\"hfl-live-drift\",\"display_name\":\"{{name}}\",\"expiration_dates\":[],\"fingerprints\":[],\"id\":270000006,\"kind\":\"CertificateAuthority\",\"serial_numbers\":[],\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/certificate-authorities/270000006",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"certificate_chain_filename\":\"hfl-live-ca.pem\",\"crl_source\":\"LOCAL\",\"crl_updated_at\":\"2017-07-21T17:32:28Z\",\"description\":\"hfl-live-drift\",\"display_name\":\"{{name}}\",\"expiration_dates\":[],\"fingerprints\":[],\"id\":270000006,\"kind\":\"CertificateAuthority\",\"serial_numbers\":[],\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/iam/v2/certificate-authorities/270000006",
+      "body": "{\"certificate_chain\":\"-----BEGIN CERTIFICATE-----\\nMIIBxjCCAWygAwIBAgIUf+QQw/JBebC8BgKxjx2b6MkeOZ4wCgYIKoZIzj0EAwIw\\nQTELMAkGA1UEBhMCVVMxFzAVBgNVBAoMDkhpZ2ggRml2ZSBMYWJzMRkwFwYDVQQD\\nDBBoZmwtbGl2ZSB0ZXN0IENBMB4XDTI2MTExNjA3Mzg1NVoXDTM2MTExMzA3Mzg1\\nNVowQTELMAkGA1UEBhMCVVMxFzAVBgNVBAoMDkhpZ2ggRml2ZSBMYWJzMRkwFwYD\\nVQQDDBBoZmwtbGl2ZSB0ZXN0IENBMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE\\njxqr5Iw1ELSXBgGmbHTgNH/Adela1s10mRsejoBW/qQaP29KAoyF1Dqo2qISACP1\\nVx5KsPmqlUfvTdG0K2cLeqNCMEAwHQYDVR0OBBYEFPH56j/u7PgKFBQjQ2INRDpX\\nQVPoMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgEGMAoGCCqGSM49BAMC\\nA0gAMEUCIEtJknZVF2xkliCuXpTE7ZFwVcXvxySPD0OiGUOJWLF4AiEA1nUgf+o0\\n7mRU/rDVz/fD0qv8Ij07Q0pSPBbbnl5jlpc=\\n-----END CERTIFICATE-----\\n\",\"certificate_chain_filename\":\"hfl-live-ca.pem\",\"description\":\"second\",\"display_name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"certificate_chain_filename\":\"hfl-live-ca.pem\",\"crl_source\":\"LOCAL\",\"crl_updated_at\":\"2017-07-21T17:32:28Z\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"expiration_dates\":[],\"fingerprints\":[],\"id\":270000006,\"kind\":\"CertificateAuthority\",\"serial_numbers\":[],\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/certificate-authorities/270000006",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"iam/v2\",\"certificate_chain_filename\":\"hfl-live-ca.pem\",\"crl_source\":\"LOCAL\",\"crl_updated_at\":\"2017-07-21T17:32:28Z\",\"description\":\"second\",\"display_name\":\"{{name}}\",\"expiration_dates\":[],\"fingerprints\":[],\"id\":270000006,\"kind\":\"CertificateAuthority\",\"serial_numbers\":[],\"state\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/iam/v2/certificate-authorities/270000006",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/iam/v2/certificate-authorities/270000006",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

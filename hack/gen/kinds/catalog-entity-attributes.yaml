@@ -1,0 +1,18 @@
+terraform: [confluent_catalog_entity_attributes]
+kind: CatalogEntityAttributes
+shape: settings
+params:
+  typeName: {type: string, inBody: true}
+  qualifiedName: {type: string, field: attributes.qualifiedName}
+fields:
+  attributes:
+    type: object
+    x-kubernetes-preserve-unknown-fields: true
+    properties:
+      qualifiedName: {type: string}
+required: [attributes]
+sample: {typeName: kafka_topic, attributes: {qualifiedName: "lsrc-8wgvx:lkc-m80307:example-topic", description: An example topic, owner: example-team}}
+envelope: entity
+bodyEnvelope: entity
+read: {method: GET, path: "/catalog/v1/entity/type/{typeName}/name/{qualifiedName}"}
+update: {method: PUT, path: /catalog/v1/entity}

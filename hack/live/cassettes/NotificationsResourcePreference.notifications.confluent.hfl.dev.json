@@ -1,0 +1,93 @@
+{
+  "recorded": "2026-11-20T23:57:06Z",
+  "target": "Confluent Cloud trial",
+  "vars": {
+    "ca": "op-Xl6A",
+    "env": "env-qqkyyd",
+    "envcrn": "crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd",
+    "hook": "i-JQlZP",
+    "idp": "op-5AZ3",
+    "sa": "sa-5m3099z"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/notifications/v1/resource-preferences",
+      "body": "{\"current_state\":\"DISABLED\",\"resource\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\",\"resource_type\":\"ENVIRONMENT\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"ResourcePreference\",\"id\":\"rp-dnkpB\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/resource-preferences/rp-dnkpB\",\"resource_name\":\"crn://confluent.cloud/resource-preference=rp-dnkpB\",\"created_at\":\"2026-11-20T23:57:04.918Z\",\"updated_at\":\"2026-11-20T23:57:04.918Z\"},\"resource\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\",\"resource_type\":\"ENVIRONMENT\",\"current_state\":\"DISABLED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-preferences/rp-dnkpB",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"ResourcePreference\",\"id\":\"rp-dnkpB\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/resource-preferences/rp-dnkpB\",\"resource_name\":\"crn://confluent.cloud/resource-preference=rp-dnkpB\",\"created_at\":\"2026-11-20T23:57:04.918Z\",\"updated_at\":\"2026-11-20T23:57:04.918Z\"},\"resource\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\",\"resource_type\":\"ENVIRONMENT\",\"current_state\":\"DISABLED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-preferences/rp-dnkpB",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"ResourcePreference\",\"id\":\"rp-dnkpB\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/resource-preferences/rp-dnkpB\",\"resource_name\":\"crn://confluent.cloud/resource-preference=rp-dnkpB\",\"created_at\":\"2026-11-20T23:57:04.918Z\",\"updated_at\":\"2026-11-20T23:57:04.918Z\"},\"resource\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\",\"resource_type\":\"ENVIRONMENT\",\"current_state\":\"DISABLED\"}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/resource-preferences/rp-dnkpB",
+      "body": "{\"current_state\":\"ENABLED\",\"resource\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\",\"resource_type\":\"ENVIRONMENT\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"ResourcePreference\",\"id\":\"rp-dnkpB\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/resource-preferences/rp-dnkpB\",\"resource_name\":\"crn://confluent.cloud/resource-preference=rp-dnkpB\",\"created_at\":\"2026-11-20T23:57:04.918Z\",\"updated_at\":\"2026-11-20T23:57:05.472Z\"},\"resource\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\",\"resource_type\":\"ENVIRONMENT\",\"current_state\":\"ENABLED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-preferences/rp-dnkpB",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"ResourcePreference\",\"id\":\"rp-dnkpB\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/resource-preferences/rp-dnkpB\",\"resource_name\":\"crn://confluent.cloud/resource-preference=rp-dnkpB\",\"created_at\":\"2026-11-20T23:57:04.918Z\",\"updated_at\":\"2026-11-20T23:57:05.472Z\"},\"resource\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\",\"resource_type\":\"ENVIRONMENT\",\"current_state\":\"ENABLED\"}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/resource-preferences/rp-dnkpB",
+      "body": "{\"current_state\":\"DISABLED\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"ResourcePreference\",\"id\":\"rp-dnkpB\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/resource-preferences/rp-dnkpB\",\"resource_name\":\"crn://confluent.cloud/resource-preference=rp-dnkpB\",\"created_at\":\"2026-11-20T23:57:04.918Z\",\"updated_at\":\"2026-11-20T23:57:05.947Z\"},\"resource\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\",\"resource_type\":\"ENVIRONMENT\",\"current_state\":\"DISABLED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-preferences/rp-dnkpB",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"ResourcePreference\",\"id\":\"rp-dnkpB\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/resource-preferences/rp-dnkpB\",\"resource_name\":\"crn://confluent.cloud/resource-preference=rp-dnkpB\",\"created_at\":\"2026-11-20T23:57:04.918Z\",\"updated_at\":\"2026-11-20T23:57:05.947Z\"},\"resource\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\",\"resource_type\":\"ENVIRONMENT\",\"current_state\":\"DISABLED\"}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/notifications/v1/resource-preferences/rp-dnkpB",
+      "body": "{\"current_state\":\"ENABLED\",\"resource\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\",\"resource_type\":\"ENVIRONMENT\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"ResourcePreference\",\"id\":\"rp-dnkpB\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/resource-preferences/rp-dnkpB\",\"resource_name\":\"crn://confluent.cloud/resource-preference=rp-dnkpB\",\"created_at\":\"2026-11-20T23:57:04.918Z\",\"updated_at\":\"2026-11-20T23:57:06.303Z\"},\"resource\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\",\"resource_type\":\"ENVIRONMENT\",\"current_state\":\"ENABLED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-preferences/rp-dnkpB",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"notifications/v1\",\"kind\":\"ResourcePreference\",\"id\":\"rp-dnkpB\",\"metadata\":{\"self\":\"{{baseURL}}/notifications/v1/resource-preferences/rp-dnkpB\",\"resource_name\":\"crn://confluent.cloud/resource-preference=rp-dnkpB\",\"created_at\":\"2026-11-20T23:57:04.918Z\",\"updated_at\":\"2026-11-20T23:57:06.303Z\"},\"resource\":\"crn://confluent.cloud/organization=ad2fbe08-9a81-4047-aa64-46231ae9af33/environment=env-qqkyyd\",\"resource_type\":\"ENVIRONMENT\",\"current_state\":\"ENABLED\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/notifications/v1/resource-preferences/rp-dnkpB",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/notifications/v1/resource-preferences/rp-dnkpB",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errors\":[{\"id\":\"a0aaa966-397b-45e7-a4eb-34b37cadc0ff\",\"status\":\"404\",\"code\":\"1100\",\"title\":\"ID Not Found\",\"detail\":\"ResourcePreference with id=rp-dnkpB is not found\"}]}"
+    }
+  ]
+}

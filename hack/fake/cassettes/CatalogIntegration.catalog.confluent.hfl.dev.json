@@ -1,0 +1,93 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/tableflow/v1/catalog-integrations",
+      "body": "{\"spec\":{\"config\":{\"kind\":\"AwsGlue\"},\"display_name\":\"catalog_integration_1\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"kafka_cluster\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"config\":{\"kind\":\"AwsGlue\"},\"display_name\":\"catalog_integration_1\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000025,\"kafka_cluster\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/tableflow/v1/catalog-integrations/270000025?environment=example-id\u0026spec.kafka_cluster=example-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"config\":{\"kind\":\"AwsGlue\"},\"display_name\":\"catalog_integration_1\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000025,\"kafka_cluster\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/tableflow/v1/catalog-integrations/270000025?environment=example-id\u0026spec.kafka_cluster=example-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"config\":{\"kind\":\"AwsGlue\"},\"display_name\":\"catalog_integration_1\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000025,\"kafka_cluster\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/tableflow/v1/catalog-integrations/270000025",
+      "body": "{\"spec\":{\"config\":{\"kind\":\"AwsGlue\"},\"display_name\":\"changed-display_name\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"kafka_cluster\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"config\":{\"kind\":\"AwsGlue\"},\"display_name\":\"changed-display_name\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000025,\"kafka_cluster\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/tableflow/v1/catalog-integrations/270000025?environment=example-id\u0026spec.kafka_cluster=example-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"config\":{\"kind\":\"AwsGlue\"},\"display_name\":\"changed-display_name\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000025,\"kafka_cluster\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/tableflow/v1/catalog-integrations/270000025",
+      "body": "{\"spec\":{\"display_name\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"config\":{\"kind\":\"AwsGlue\"},\"display_name\":\"hfl-live-drift\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000025,\"kafka_cluster\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/tableflow/v1/catalog-integrations/270000025?environment=example-id\u0026spec.kafka_cluster=example-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"config\":{\"kind\":\"AwsGlue\"},\"display_name\":\"hfl-live-drift\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000025,\"kafka_cluster\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/tableflow/v1/catalog-integrations/270000025",
+      "body": "{\"spec\":{\"config\":{\"kind\":\"AwsGlue\"},\"display_name\":\"changed-display_name\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"kafka_cluster\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"config\":{\"kind\":\"AwsGlue\"},\"display_name\":\"changed-display_name\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000025,\"kafka_cluster\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/tableflow/v1/catalog-integrations/270000025?environment=example-id\u0026spec.kafka_cluster=example-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"spec\":{\"config\":{\"kind\":\"AwsGlue\"},\"display_name\":\"changed-display_name\",\"environment\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"},\"id\":270000025,\"kafka_cluster\":{\"id\":\"example-id\",\"related\":\"example-related\",\"resource_name\":\"example-resource-name\"}}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/tableflow/v1/catalog-integrations/270000025?environment=example-id\u0026spec.kafka_cluster=example-id",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/tableflow/v1/catalog-integrations/270000025?environment=example-id\u0026spec.kafka_cluster=example-id",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

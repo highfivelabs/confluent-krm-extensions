@@ -1,0 +1,41 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/kafka/v3/clusters/example-cluster-id/links/example-link-name/mirrors",
+      "body": "{\"source_topic_name\":\"example-source-topic-name\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"kind\":\"example-kind\",\"link_name\":\"example-link-name\",\"metadata\":{\"self\":\"example-self\"},\"mirror_lags\":[],\"mirror_state_transition_errors\":[],\"mirror_status\":\"ACTIVE\",\"mirror_topic_error\":\"example-mirror-topic-error\",\"mirror_topic_name\":270000046,\"num_partitions\":1,\"source_topic_name\":\"example-source-topic-name\",\"state_time_ms\":1}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/kafka/v3/clusters/example-cluster-id/links/example-link-name/mirrors/270000046",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"kind\":\"example-kind\",\"link_name\":\"example-link-name\",\"metadata\":{\"self\":\"example-self\"},\"mirror_lags\":[],\"mirror_state_transition_errors\":[],\"mirror_status\":\"ACTIVE\",\"mirror_topic_error\":\"example-mirror-topic-error\",\"mirror_topic_name\":270000046,\"num_partitions\":1,\"source_topic_name\":\"example-source-topic-name\",\"state_time_ms\":1}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/kafka/v3/clusters/example-cluster-id/topics/270000046",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/kafka/v3/clusters/example-cluster-id/links/example-link-name/mirrors/270000046",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

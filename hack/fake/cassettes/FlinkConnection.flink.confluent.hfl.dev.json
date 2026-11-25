@@ -1,0 +1,41 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ca": 280000004,
+    "env": 280000001,
+    "envcrn": "rehearsal-envcrn",
+    "hook": 280000005,
+    "idp": 280000003,
+    "sa": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/sql/v1/organizations/example-organization-id/environments/example-environment-id/connections",
+      "body": "{\"name\":\"my-openai-connection\",\"spec\":{\"auth_data\":{},\"connection_type\":\"OPENAI\",\"endpoint\":\"https://api.openai.com/v1/chat/completions\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"sql/v1\",\"kind\":\"Connection\",\"name\":\"my-openai-connection\",\"spec\":{\"connection_type\":\"OPENAI\",\"endpoint\":\"https://api.openai.com/v1/chat/completions\"},\"status\":{\"phase\":\"READY\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/sql/v1/organizations/example-organization-id/environments/example-environment-id/connections/my-openai-connection",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"api_version\":\"sql/v1\",\"kind\":\"Connection\",\"name\":\"my-openai-connection\",\"spec\":{\"connection_type\":\"OPENAI\",\"endpoint\":\"https://api.openai.com/v1/chat/completions\"},\"status\":{\"phase\":\"READY\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/sql/v1/organizations/example-organization-id/environments/example-environment-id/connections/my-openai-connection",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/sql/v1/organizations/example-organization-id/environments/example-environment-id/connections/my-openai-connection",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

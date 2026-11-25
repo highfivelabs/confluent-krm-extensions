@@ -1,0 +1,20 @@
+# Copyright 2026 High Five Labs
+# SPDX-License-Identifier: Apache-2.0
+apiVersion: v1
+kind: Secret
+metadata:
+  name: confluent-credentials
+  namespace: team-a
+stringData:
+  apiKey: <apiKey>
+  apiSecret: <apiSecret>
+---
+apiVersion: core.confluent.hfl.dev/v1alpha1
+kind: Connection
+metadata:
+  name: default
+  namespace: team-a
+spec:
+  baseURL: https://api.confluent.cloud
+  secretRef:
+    name: confluent-credentials

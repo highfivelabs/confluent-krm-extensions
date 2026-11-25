@@ -1,0 +1,243 @@
+# Copyright 2026 High Five Labs
+# SPDX-License-Identifier: Apache-2.0
+# The manager reads Connections and their Secrets in every namespace it
+# reconciles; narrow the binding per namespace if that is too broad.
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: manager
+  namespace: confluent-krm-extensions-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: confluent-krm-extensions-manager
+rules:
+- apiGroups: &id001
+  - access.confluent.hfl.dev
+  - api.confluent.hfl.dev
+  - byok.confluent.hfl.dev
+  - catalog.confluent.hfl.dev
+  - certificate.confluent.hfl.dev
+  - connect.confluent.hfl.dev
+  - custom.confluent.hfl.dev
+  - dns.confluent.hfl.dev
+  - environment.confluent.hfl.dev
+  - flink.confluent.hfl.dev
+  - gateway.confluent.hfl.dev
+  - group.confluent.hfl.dev
+  - identity.confluent.hfl.dev
+  - invitation.confluent.hfl.dev
+  - ip.confluent.hfl.dev
+  - kafka.confluent.hfl.dev
+  - ksql.confluent.hfl.dev
+  - network.confluent.hfl.dev
+  - notifications.confluent.hfl.dev
+  - peering.confluent.hfl.dev
+  - plugin.confluent.hfl.dev
+  - private.confluent.hfl.dev
+  - provider.confluent.hfl.dev
+  - rtce.confluent.hfl.dev
+  - service.confluent.hfl.dev
+  - switchover.confluent.hfl.dev
+  - tableflow.confluent.hfl.dev
+  - transit.confluent.hfl.dev
+  resources:
+  - accesspoints
+  - apikeys
+  - byokkeys
+  - catalogintegrations
+  - certificateauthorities
+  - certificatepools
+  - connectartifacts
+  - customconnectorplugins
+  - customconnectorpluginversions
+  - dnsforwarders
+  - dnsrecords
+  - environments
+  - flinkartifacts
+  - flinkcomputepoolconfigs
+  - flinkcomputepools
+  - gateways
+  - groupmappings
+  - identitypools
+  - identityproviders
+  - invitations
+  - ipfilters
+  - ipgroups
+  - kafkaclientquotas
+  - kafkaclusters
+  - ksqlclusters
+  - networklinkendpoints
+  - networklinkservices
+  - networks
+  - notificationsintegrations
+  - notificationsresourcepreferences
+  - notificationsresourcesubscriptions
+  - notificationssubscriptions
+  - peerings
+  - plugins
+  - privatelinkaccesses
+  - privatelinkattachmentconnections
+  - privatelinkattachments
+  - providerintegrations
+  - rtcetopics
+  - serviceaccounts
+  - switchoverendpoints
+  - switchoverpairs
+  - tableflowtopics
+  - transitgatewayattachments
+  verbs:
+  - get
+  - list
+  - watch
+  - update
+  - patch
+- apiGroups: *id001
+  resources:
+  - accesspoints/status
+  - apikeys/status
+  - byokkeys/status
+  - catalogintegrations/status
+  - certificateauthorities/status
+  - certificatepools/status
+  - connectartifacts/status
+  - customconnectorplugins/status
+  - customconnectorpluginversions/status
+  - dnsforwarders/status
+  - dnsrecords/status
+  - environments/status
+  - flinkartifacts/status
+  - flinkcomputepoolconfigs/status
+  - flinkcomputepools/status
+  - gateways/status
+  - groupmappings/status
+  - identitypools/status
+  - identityproviders/status
+  - invitations/status
+  - ipfilters/status
+  - ipgroups/status
+  - kafkaclientquotas/status
+  - kafkaclusters/status
+  - ksqlclusters/status
+  - networklinkendpoints/status
+  - networklinkservices/status
+  - networks/status
+  - notificationsintegrations/status
+  - notificationsresourcepreferences/status
+  - notificationsresourcesubscriptions/status
+  - notificationssubscriptions/status
+  - peerings/status
+  - plugins/status
+  - privatelinkaccesses/status
+  - privatelinkattachmentconnections/status
+  - privatelinkattachments/status
+  - providerintegrations/status
+  - rtcetopics/status
+  - serviceaccounts/status
+  - switchoverendpoints/status
+  - switchoverpairs/status
+  - tableflowtopics/status
+  - transitgatewayattachments/status
+  verbs:
+  - get
+  - update
+  - patch
+- apiGroups: *id001
+  resources:
+  - accesspoints/finalizers
+  - apikeys/finalizers
+  - byokkeys/finalizers
+  - catalogintegrations/finalizers
+  - certificateauthorities/finalizers
+  - certificatepools/finalizers
+  - connectartifacts/finalizers
+  - customconnectorplugins/finalizers
+  - customconnectorpluginversions/finalizers
+  - dnsforwarders/finalizers
+  - dnsrecords/finalizers
+  - environments/finalizers
+  - flinkartifacts/finalizers
+  - flinkcomputepoolconfigs/finalizers
+  - flinkcomputepools/finalizers
+  - gateways/finalizers
+  - groupmappings/finalizers
+  - identitypools/finalizers
+  - identityproviders/finalizers
+  - invitations/finalizers
+  - ipfilters/finalizers
+  - ipgroups/finalizers
+  - kafkaclientquotas/finalizers
+  - kafkaclusters/finalizers
+  - ksqlclusters/finalizers
+  - networklinkendpoints/finalizers
+  - networklinkservices/finalizers
+  - networks/finalizers
+  - notificationsintegrations/finalizers
+  - notificationsresourcepreferences/finalizers
+  - notificationsresourcesubscriptions/finalizers
+  - notificationssubscriptions/finalizers
+  - peerings/finalizers
+  - plugins/finalizers
+  - privatelinkaccesses/finalizers
+  - privatelinkattachmentconnections/finalizers
+  - privatelinkattachments/finalizers
+  - providerintegrations/finalizers
+  - rtcetopics/finalizers
+  - serviceaccounts/finalizers
+  - switchoverendpoints/finalizers
+  - switchoverpairs/finalizers
+  - tableflowtopics/finalizers
+  - transitgatewayattachments/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - core.confluent.hfl.dev
+  resources:
+  - connections
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ''
+  resources:
+  - secrets
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+- apiGroups:
+  - coordination.k8s.io
+  resources:
+  - leases
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ''
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: confluent-krm-extensions-manager
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: confluent-krm-extensions-manager
+subjects:
+- kind: ServiceAccount
+  name: manager
+  namespace: confluent-krm-extensions-system

@@ -1,0 +1,536 @@
+{
+ "formatVersion": 1,
+ "generatedBy": "factory upjet sync (upjet/README.md in highfivelabs/factory)",
+ "provider": {
+  "repo": "crossplane-contrib/provider-confluent",
+  "tag": "v1.0.1",
+  "commit": "da10bee62f443f3bfab497f0cabe7492f49b042f",
+  "commitDate": "2026-11-17T11:22:13Z",
+  "licence": "Apache-2.0"
+ },
+ "join": "types.yaml terraform",
+ "counts": {
+  "ours": 62,
+  "matched": 6,
+  "references": 6,
+  "referencesOur": 6,
+  "handExamples": 4,
+  "notTested": 0
+ },
+ "entries": [
+  {
+   "ours": {
+    "kind": "ApiKey",
+    "group": "api.confluent.hfl.dev"
+   },
+   "facts": {
+    "terraform": "confluent_api_key",
+    "group": "confluent.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "APIKey",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:17"
+    },
+    "references": [
+     {
+      "field": "managed_resource.environment.id",
+      "target": "confluent_environment",
+      "targetKind": "confluent.crossplane.io/Environment",
+      "source": "both",
+      "at": "config/confluent_api_key/config.go:32"
+     },
+     {
+      "field": "managed_resource.id",
+      "target": "confluent_kafka_cluster",
+      "targetKind": "confluent.crossplane.io/Cluster",
+      "source": "both",
+      "at": "config/confluent_api_key/config.go:27"
+     },
+     {
+      "field": "owner.id",
+      "target": "confluent_service_account",
+      "targetKind": "confluent.crossplane.io/ServiceAccount",
+      "source": "both",
+      "at": "config/confluent_api_key/config.go:37"
+     }
+    ],
+    "async": {
+     "at": "config/confluent_api_key/config.go:13"
+    },
+    "customCode": [
+     {
+      "what": "connection details",
+      "at": "config/confluent_api_key/config.go:15"
+     }
+    ],
+    "examples": [
+     {
+      "id": "confluent/v1alpha1/apikey",
+      "at": "examples-generated/confluent/apikey.yaml",
+      "origin": "generated",
+      "fields": [
+       "description",
+       "display_name",
+       "managed_resource",
+       "managed_resource.api_version",
+       "managed_resource.environment",
+       "managed_resource.kind",
+       "owner",
+       "owner.api_version",
+       "owner.kind"
+      ],
+      "refFields": [
+       "managed_resource.environment.id",
+       "managed_resource.id",
+       "owner.id"
+      ]
+     },
+     {
+      "at": "examples/apikey/apikey.yaml",
+      "origin": "hand",
+      "fields": [
+       "managed_resource",
+       "managed_resource.api_version",
+       "managed_resource.environment",
+       "managed_resource.environment.id",
+       "managed_resource.id",
+       "managed_resource.kind",
+       "owner",
+       "owner.api_version",
+       "owner.id",
+       "owner.kind"
+      ],
+      "values": {
+       "managed_resource": [
+        {
+         "api_version": "cmk/v2",
+         "environment": [
+          {
+           "id": "${data.confluent_environment_id}"
+          }
+         ],
+         "id": "${data.confluent_kafka_cluster_id}",
+         "kind": "Cluster"
+        }
+       ],
+       "owner": [
+        {
+         "api_version": "iam/v2",
+         "id": "${data.confluent_service_account_id}",
+         "kind": "ServiceAccount"
+        }
+       ]
+      }
+     }
+    ],
+    "renamed": {
+     "kind": "APIKey",
+     "shortGroup": "confluent",
+     "at": "config/confluent_api_key/config.go:11"
+    }
+   },
+   "targetsOurs": {
+    "confluent_environment": [
+     "environment.confluent.hfl.dev/Environment"
+    ],
+    "confluent_kafka_cluster": [
+     "kafka.confluent.hfl.dev/KafkaCluster"
+    ],
+    "confluent_service_account": [
+     "service.confluent.hfl.dev/ServiceAccount"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Environment",
+    "group": "environment.confluent.hfl.dev"
+   },
+   "facts": {
+    "terraform": "confluent_environment",
+    "group": "confluent.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Environment",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:13"
+    },
+    "async": {
+     "at": "config/confluent_environment/config.go:10"
+    },
+    "examples": [
+     {
+      "id": "confluent/v1alpha1/environment",
+      "at": "examples-generated/confluent/environment.yaml",
+      "origin": "generated",
+      "fields": [
+       "display_name",
+       "stream_governance",
+       "stream_governance.package"
+      ]
+     }
+    ],
+    "renamed": {
+     "shortGroup": "confluent",
+     "at": "config/confluent_environment/config.go:9"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "KafkaAcl",
+    "group": "kafka.confluent.hfl.dev"
+   },
+   "facts": {
+    "terraform": "confluent_kafka_acl",
+    "group": "confluent.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "KafkaACL",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:18"
+    },
+    "references": [
+     {
+      "field": "kafka_cluster.id",
+      "target": "confluent_kafka_cluster",
+      "targetKind": "confluent.crossplane.io/Cluster",
+      "source": "both",
+      "at": "config/confluent_kafka_acl/config.go:17"
+     },
+     {
+      "field": "principal",
+      "target": "confluent_service_account",
+      "targetKind": "confluent.crossplane.io/ServiceAccount",
+      "extractor": "common.ExtractPrincipalIDFuncPath",
+      "source": "both",
+      "at": "config/confluent_kafka_acl/config.go:22"
+     }
+    ],
+    "async": {
+     "at": "config/confluent_kafka_acl/config.go:13"
+    },
+    "examples": [
+     {
+      "id": "confluent/v1alpha1/kafkaacl",
+      "at": "examples-generated/confluent/kafkaacl.yaml",
+      "origin": "generated",
+      "fields": [
+       "credentials",
+       "host",
+       "kafka_cluster",
+       "operation",
+       "pattern_type",
+       "permission",
+       "resource_name",
+       "resource_type",
+       "rest_endpoint"
+      ],
+      "refFields": [
+       "kafka_cluster.id",
+       "principal"
+      ]
+     },
+     {
+      "at": "examples/kafkaacl/kafkaacl.yaml",
+      "origin": "hand",
+      "fields": [
+       "host",
+       "kafka_cluster",
+       "kafka_cluster.id",
+       "operation",
+       "pattern_type",
+       "permission",
+       "principal",
+       "resource_name",
+       "resource_type"
+      ],
+      "values": {
+       "host": "*",
+       "kafka_cluster": [
+        {
+         "id": "${data.confluent_kafka_cluster_id}"
+        }
+       ],
+       "operation": "READ",
+       "pattern_type": "PREFIXED",
+       "permission": "ALLOW",
+       "principal": "${data.confluent_principal}",
+       "resource_name": "test-",
+       "resource_type": "TOPIC"
+      }
+     }
+    ],
+    "renamed": {
+     "kind": "KafkaACL",
+     "shortGroup": "confluent",
+     "at": "config/confluent_kafka_acl/config.go:12"
+    }
+   },
+   "targetsOurs": {
+    "confluent_kafka_cluster": [
+     "kafka.confluent.hfl.dev/KafkaCluster"
+    ],
+    "confluent_service_account": [
+     "service.confluent.hfl.dev/ServiceAccount"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "KafkaCluster",
+    "group": "kafka.confluent.hfl.dev"
+   },
+   "facts": {
+    "terraform": "confluent_kafka_cluster",
+    "group": "confluent.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Cluster",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:15"
+    },
+    "references": [
+     {
+      "field": "environment.id",
+      "target": "confluent_environment",
+      "targetKind": "confluent.crossplane.io/Environment",
+      "source": "both",
+      "at": "config/confluent_kafka_cluster/config.go:15"
+     }
+    ],
+    "lateInitIgnored": [
+     {
+      "field": "network",
+      "at": "config/confluent_kafka_cluster/config.go:23"
+     },
+     {
+      "field": "byok_key",
+      "at": "config/confluent_kafka_cluster/config.go:23"
+     }
+    ],
+    "async": {
+     "at": "config/confluent_kafka_cluster/config.go:12"
+    },
+    "examples": [
+     {
+      "id": "confluent/v1alpha1/cluster",
+      "at": "examples-generated/confluent/cluster.yaml",
+      "origin": "generated",
+      "with": [
+       "confluent_environment"
+      ],
+      "fields": [
+       "availability",
+       "basic",
+       "cloud",
+       "display_name",
+       "environment",
+       "region"
+      ],
+      "refFields": [
+       "environment.id"
+      ]
+     },
+     {
+      "at": "examples/cluster/cluster.yaml",
+      "origin": "hand",
+      "fields": [
+       "availability",
+       "basic",
+       "cloud",
+       "display_name",
+       "environment",
+       "environment.id",
+       "region"
+      ],
+      "values": {
+       "availability": "SINGLE_ZONE",
+       "basic": [
+        {}
+       ],
+       "cloud": "${data.confluent_kafka_cluster_cloud}",
+       "display_name": "confluent-cloud-kafka-cluster-basic-uptest",
+       "environment": [
+        {
+         "id": "${data.confluent_environment_id}"
+        }
+       ],
+       "region": "${data.confluent_region}"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "confluent",
+     "at": "config/confluent_kafka_cluster/config.go:11"
+    }
+   },
+   "targetsOurs": {
+    "confluent_environment": [
+     "environment.confluent.hfl.dev/Environment"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "KafkaClusterConfig",
+    "group": "kafka.confluent.hfl.dev"
+   },
+   "facts": {
+    "terraform": "confluent_kafka_cluster_config",
+    "group": "confluent.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ClusterConfig",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:14"
+    },
+    "async": {
+     "at": "config/confluent_kafka_cluster_config/config.go:10"
+    },
+    "examples": [
+     {
+      "id": "confluent/v1alpha1/clusterconfig",
+      "at": "examples-generated/confluent/clusterconfig.yaml",
+      "origin": "generated",
+      "fields": [
+       "config",
+       "credentials",
+       "kafka_cluster",
+       "kafka_cluster.id",
+       "rest_endpoint"
+      ]
+     }
+    ],
+    "renamed": {
+     "shortGroup": "confluent",
+     "at": "config/confluent_kafka_cluster_config/config.go:9"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "ServiceAccount",
+    "group": "service.confluent.hfl.dev"
+   },
+   "facts": {
+    "terraform": "confluent_service_account",
+    "group": "confluent.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ServiceAccount",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:16"
+    },
+    "async": {
+     "at": "config/confluent_service_account/config.go:10"
+    },
+    "examples": [
+     {
+      "id": "confluent/v1alpha1/serviceaccount",
+      "at": "examples-generated/confluent/serviceaccount.yaml",
+      "origin": "generated",
+      "fields": [
+       "description",
+       "display_name"
+      ]
+     },
+     {
+      "at": "examples/serviceaccount/serviceaccount.yaml",
+      "origin": "hand",
+      "fields": [
+       "description",
+       "display_name"
+      ],
+      "values": {
+       "description": "Test Service Account for provider-confluent",
+       "display_name": "provider-confluent-test-service-account"
+      }
+     }
+    ],
+    "renamed": {
+     "kind": "ServiceAccount",
+     "shortGroup": "confluent",
+     "at": "config/confluent_service_account/config.go:9"
+    }
+   }
+  }
+ ],
+ "noUpjet": [
+  "access.confluent.hfl.dev/AccessPoint",
+  "business.confluent.hfl.dev/BusinessMetadata",
+  "business.confluent.hfl.dev/BusinessMetadataBinding",
+  "byok.confluent.hfl.dev/ByokKey",
+  "catalog.confluent.hfl.dev/CatalogEntityAttributes",
+  "catalog.confluent.hfl.dev/CatalogIntegration",
+  "certificate.confluent.hfl.dev/CertificateAuthority",
+  "certificate.confluent.hfl.dev/CertificatePool",
+  "connect.confluent.hfl.dev/ConnectArtifact",
+  "custom.confluent.hfl.dev/CustomConnectorPlugin",
+  "custom.confluent.hfl.dev/CustomConnectorPluginVersion",
+  "dns.confluent.hfl.dev/DnsForwarder",
+  "dns.confluent.hfl.dev/DnsRecord",
+  "flink.confluent.hfl.dev/FlinkArtifact",
+  "flink.confluent.hfl.dev/FlinkComputePool",
+  "flink.confluent.hfl.dev/FlinkComputePoolConfig",
+  "flink.confluent.hfl.dev/FlinkConnection",
+  "flink.confluent.hfl.dev/FlinkMaterializedTable",
+  "flink.confluent.hfl.dev/FlinkStatement",
+  "gateway.confluent.hfl.dev/Gateway",
+  "group.confluent.hfl.dev/GroupMapping",
+  "identity.confluent.hfl.dev/IdentityPool",
+  "identity.confluent.hfl.dev/IdentityProvider",
+  "invitation.confluent.hfl.dev/Invitation",
+  "ip.confluent.hfl.dev/IpFilter",
+  "ip.confluent.hfl.dev/IpGroup",
+  "kafka.confluent.hfl.dev/KafkaClientQuota",
+  "kafka.confluent.hfl.dev/KafkaMirrorTopic",
+  "ksql.confluent.hfl.dev/KsqlCluster",
+  "network.confluent.hfl.dev/Network",
+  "network.confluent.hfl.dev/NetworkLinkEndpoint",
+  "network.confluent.hfl.dev/NetworkLinkService",
+  "notifications.confluent.hfl.dev/NotificationsIntegration",
+  "notifications.confluent.hfl.dev/NotificationsResourcePreference",
+  "notifications.confluent.hfl.dev/NotificationsResourceSubscription",
+  "notifications.confluent.hfl.dev/NotificationsSubscription",
+  "peering.confluent.hfl.dev/Peering",
+  "plugin.confluent.hfl.dev/Plugin",
+  "private.confluent.hfl.dev/PrivateLinkAccess",
+  "private.confluent.hfl.dev/PrivateLinkAttachment",
+  "private.confluent.hfl.dev/PrivateLinkAttachmentConnection",
+  "provider.confluent.hfl.dev/ProviderIntegration",
+  "provider.confluent.hfl.dev/ProviderIntegrationV2",
+  "rtce.confluent.hfl.dev/RtceTopic",
+  "schema.confluent.hfl.dev/SchemaRegistryClusterConfig",
+  "schema.confluent.hfl.dev/SchemaRegistryClusterMode",
+  "schema.confluent.hfl.dev/SchemaRegistryDek",
+  "schema.confluent.hfl.dev/SchemaRegistryKek",
+  "subject.confluent.hfl.dev/SubjectConfig",
+  "subject.confluent.hfl.dev/SubjectMode",
+  "switchover.confluent.hfl.dev/SwitchoverEndpoint",
+  "switchover.confluent.hfl.dev/SwitchoverPair",
+  "tableflow.confluent.hfl.dev/TableflowTopic",
+  "tag.confluent.hfl.dev/Tag",
+  "tag.confluent.hfl.dev/TagBinding",
+  "transit.confluent.hfl.dev/TransitGatewayAttachment"
+ ]
+}
